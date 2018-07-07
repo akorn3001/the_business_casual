@@ -1,7 +1,10 @@
+const path = require('path');
+
 module.exports = {
-  entry: "./entry.jsx",
+  context: _dirname,
+  entry: "./frontend/entry.jsx",
   output: {
-    path: "./",
+    path: path.resolve(_dirname),
     filename: "bundle.js"
   },
   module: {
@@ -18,6 +21,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ["", ".js", ".jsx"]
+    extensions: ["", ".js", ".jsx", "*"]
   }
 };
