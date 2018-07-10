@@ -13,5 +13,6 @@
 
 class Article < ApplicationRecord
   belongs_to :category
-  validates :author, :title, :body, :category_id, presence: true 
+  
+  validates :author, :title, :body, :category_id, presence: true
 end

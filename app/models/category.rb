@@ -9,6 +9,9 @@
 #
 
 class Category < ApplicationRecord
+  CATEGORY_NAMES = %w(Cat1 Cat2 Cat3 Cat4 Cat5)
+
   has_many :articles
-  validates :name, presence: true
+
+  validates :name, presence: true, inclusion: CATEGORY_NAMES
 end
