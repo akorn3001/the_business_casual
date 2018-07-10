@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by(id: params[:id])
+    find_article
     render :show
   end
 
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     # else
     #   render :edit
     # end
-  end 
+  end
 
   def create
     # @article = Article.new(article_params)
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find_by(id: params[:id])
+    find_article
     render :edit
   end
 
@@ -45,5 +45,9 @@ class ArticlesController < ApplicationController
   private
   def article_params
     params.require(:article).permit(:author, :title, :body, :category_id)
+  end
+
+  def find_article
+    @article = Article.find_by(id: params[:id])
   end
 end
