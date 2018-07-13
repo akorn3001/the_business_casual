@@ -1,12 +1,12 @@
-class ArticlesController < ApplicationController
+class Api::ArticlesController < ApplicationController
   def index
     @articles = Article.all
-    render :index
+    render "api/articles/index"
   end
 
   def show
     find_article
-    render :show
+    render "api/articles/show"
   end
 
   def update
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     # if @article.update_attributes(article_params)
     #   redirect_to article_url(@article)
     # else
-    #   render :edit
+    #   render "api/articles/edit"
     # end
   end
 
@@ -25,18 +25,18 @@ class ArticlesController < ApplicationController
     # if @article.save
     #   redirect_to article_url(@article)
     # else
-    #   render :new
+    #   render "api/articles/new"
     # end
   end
 
   def edit
     find_article
-    render :edit
+    render "api/articles/edit"
   end
 
   def new
     @article = Article.new
-    render :new
+    render "api/articles/new"
   end
 
   def destroy

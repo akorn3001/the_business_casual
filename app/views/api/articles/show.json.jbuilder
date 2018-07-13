@@ -1,0 +1,1 @@
+json.photo @article.photo
