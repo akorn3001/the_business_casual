@@ -9,7 +9,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -46,6 +45,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'annotate'
   gem 'faker'
+  # gem 'sqlite3'
 end
 
 group :development do
