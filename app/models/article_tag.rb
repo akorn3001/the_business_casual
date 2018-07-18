@@ -10,6 +10,7 @@
 #
 
 class ArticleTag < ApplicationRecord
+
   belongs_to :article,
     primary_key: :id,
     foreign_key: :article_id,
@@ -19,4 +20,5 @@ class ArticleTag < ApplicationRecord
     primary_key: :id,
     foreign_key: :category_id,
     class_name: 'Category'
+    
 end

@@ -16,5 +16,12 @@ class Article < ApplicationRecord
 
   validates :title, :body, :category_id, presence: true
 
-  
+  has_many :article_tags,
+    primary_key: :id,
+    foreign_key: :article_id,
+    class_name: 'ArticleTag'
+
+  has_many :categories,
+    through: :article_tags,
+    source: :category
 end
