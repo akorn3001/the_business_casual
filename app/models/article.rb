@@ -11,7 +11,7 @@
 
 class Article < ApplicationRecord
 
-  has_one_attached :photo
+  has_one_attached :image
 
   validates :title, :body, presence: true
   # validates :title, uniqueness: true

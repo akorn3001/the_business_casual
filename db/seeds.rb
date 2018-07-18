@@ -16,9 +16,15 @@ end
 
 Article.destroy_all
 
-40.times do |index|
+20.times do |index|
   Article.create!(
     title: Faker::Book.title,
     body: Faker::Lorem.paragraph
   )
 end
+
+Article.all.each_with_index do |article, idx|
+  article.image.attach(io: File.open("/Users/akorn/Desktop/test_pictures/#{idx + 1}.jpg"), filename: "#{idx + 1}.jpg")
+end
+
+# art1 = Article.create!(title: Faker::Book.title, body: Faker::Lorem.paragraph)
