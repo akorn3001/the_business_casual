@@ -13,7 +13,7 @@ class Category < ApplicationRecord
 
   # has_many :articles
 
-  validates :name, presence: true, inclusion: CATEGORY_NAMES
+  validates :name, presence: true
 
   has_many :article_tags,
     primary_key: :id,
