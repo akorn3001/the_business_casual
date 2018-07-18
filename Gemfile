@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem 'aws-sdk-s3'
 gem 'devise'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
