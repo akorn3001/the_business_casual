@@ -3,7 +3,6 @@
 # Table name: articles
 #
 #  id          :integer          not null, primary key
-#  author      :string           not null
 #  title       :string           not null
 #  body        :text             not null
 #  category_id :integer          not null
@@ -15,5 +14,7 @@ class Article < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :author, :title, :body, :category_id, presence: true
+  validates :title, :body, :category_id, presence: true
+
+  
 end
