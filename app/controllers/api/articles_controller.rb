@@ -1,12 +1,14 @@
 class Api::ArticlesController < ApplicationController
   def index
     @articles = Article.all
-    render "api/articles/index"
+    # render "api/articles/index"
+    render :index
   end
 
   def show
     find_article
-    render "api/articles/show"
+    # render "api/articles/show"
+    render :show
   end
 
   def update

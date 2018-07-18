@@ -11,3 +11,14 @@ Category.destroy_all
 10.times do |index|
   Category.create!(name: Faker::Food.fruits)
 end
+
+######################################
+
+Article.destroy_all
+
+40.times do |index|
+  Article.create!(
+    title: Faker::Book.title,
+    body: Faker::Lorem.paragraph
+  )
+end

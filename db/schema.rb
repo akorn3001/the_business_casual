@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_18_053052) do
+ActiveRecord::Schema.define(version: 2018_07_18_062653) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_07_18_053052) do
     t.integer "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id", "category_id"], name: "index_article_tags_on_article_id_and_category_id", unique: true
   end
 
   create_table "articles", force: :cascade do |t|
