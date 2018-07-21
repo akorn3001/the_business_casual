@@ -1,4 +1,4 @@
-// import merge from 'lodash/merge';
+import merge from 'lodash/merge';
 //
 // import {
 //   RECEIVE_ERRORS,
@@ -26,3 +26,22 @@
 // };
 //
 // export default ErrorsReducer;
+
+const ErrorsReducer = (state = [], action) => {
+  let newState = merge({}, state);
+  
+  Object.freeze(state);
+  let errors;
+  switch(action.type) {
+    case "RECEIVE_ERRORS":
+      errors = action.errors;
+      return action.errors;
+    case "CLEAR ERRORS":
+      errors = action.errors;
+      return [];
+    default:
+      return state;
+  }
+};
+
+export default ErrorsReducer;
