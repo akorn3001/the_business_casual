@@ -31,6 +31,7 @@ gem 'pry-rails'
 gem 'aws-sdk-s3'
 gem 'devise'
 gem 'jquery-rails'
+gem 'toastr-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
