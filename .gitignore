@@ -18,9 +18,12 @@
 !/tmp/.keep
 
 /node_modules
-/yarn-error.log
 bundle.js
 bundle.js.map
+/yarn-error.log
+.DS_Store
+/vendor
+
 
 
 .byebug_history
