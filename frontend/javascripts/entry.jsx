@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 //Components
 import Root from './components/root';
-import configureStore from './store/store';
+import configureStore from '../redux/store/store';
 
 
 document.addEventListener('DOMContentLoaded', () => {
