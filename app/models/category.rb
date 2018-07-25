@@ -11,11 +11,9 @@
 class Category < ApplicationRecord
   CATEGORY_NAMES = %w(Cat1 Cat2 Cat3 Cat4 Cat5)
 
-  # has_many :articles
-
   validates :name, presence: true
 
-  has_many :article_tags,
+  has_many :article_tags, dependent: :destroy,
     primary_key: :id,
     foreign_key: :category_id,
     class_name: 'ArticleTag'

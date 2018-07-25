@@ -9,9 +9,25 @@ export const fetchAllArticles = () => (
 export const fetchCategorizedArticles = (category_id) => (
   $.ajax({
     method: 'GET',
-    url: '/api/categories/${category_id}/articles'
+    url: `/api/categories/${category_id}/articles`
   })
 );
+
+export const fetchAllCategories = () => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/categories'
+  })
+);
+
+export const fetchArticleizedCategories = (article_id) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/articles/${article_id}/categories`
+  })
+);
+
+
 //
 // export const fetchCurrentUserMeetups = () => (
 //   $.ajax({
@@ -20,52 +36,33 @@ export const fetchCategorizedArticles = (category_id) => (
 //     // data: { meetup: {user_id} }
 //   })
 // );
-//
-// export const fetchCityMeetups = (city_id) => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `api/cities/${city_id}/meetups`,
-//   })
-// );
-//
-// export const fetchAllUsers = () => (
-//   $.ajax({
-//     method: 'GET',
-//     url: '/api/users'
-//   })
-// );
-//
+
 // // FETCH SINGLE
-// export const fetchSingleMeetup = (meetupId) => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `/api/meetups/${meetupId}`
-//   })
-// );
-//
-// export const fetchSingleUser = (userId) => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `/api/users/${userId}`
-//   })
-// );
-//
-// export const fetchSingleCity = (cityId) => (
-//   $.ajax({
-//     method: 'GET',
-//     url: `/api/users/${cityId}`
-//   })
-// );
-//
+
+export const fetchSingleArticle = (article_id) => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/articles/${article_id}`
+  })
+);
+
 // // CREATE
-// export const createMeetup = (meetup) => {
-//   return $.ajax({
-//     method: 'POST',
-//     url: '/api/meetups/',
-//     data: { meetup }
-//   });
-// };
-//
+
+export const createArticle = (article) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/articles',
+    data: { article }
+  });
+};
+
+export const createCategory = (category) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/categories',
+    data: { category }
+  });
+};
 // // ATTEND / UNATTEND MEETUPS
 // export const attendMeetup = (meetupId) => {
 //   return $.ajax({

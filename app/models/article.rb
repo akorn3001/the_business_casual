@@ -16,7 +16,7 @@ class Article < ApplicationRecord
   validates :title, :body, presence: true
   # validates :title, uniqueness: true
 
-  has_many :article_tags,
+  has_many :article_tags, dependent: :destroy,
     primary_key: :id,
     foreign_key: :article_id,
     class_name: 'ArticleTag'
