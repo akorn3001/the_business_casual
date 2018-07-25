@@ -4,14 +4,21 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do
-    resources :articles, only: [:index, :show]
+    # Top level articles
+    resources :articles, only: [:index]
 
+    resources :articles, only: [:show] do
+      resources :categories, only: [:index]
+    end
+
+    # Top level categories
     resources :categories, except: [:show]
 
     resources :categories, only: [:show] do
       resources :articles, only: [:index]
     end
 
+    # Top level article_tags
     resources :article_tags, only: [:index, :show]
   end
 end
