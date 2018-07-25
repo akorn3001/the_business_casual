@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :articles, only: [:index, :show]
-    resources :categories, only: [:index]
+
+    resources :categories, except: [:show]
+
+    resources :categories, only: [:show] do
+      resources :articles, only: [:index]
+    end
+
     resources :article_tags, only: [:index, :show]
   end
 end

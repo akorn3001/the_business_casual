@@ -1,10 +1,17 @@
 // // FETCH ALL
-// export const fetchAllCities = () => (
-//   $.ajax({
-//     method: 'GET',
-//     url: '/api/cities'
-//   })
-// );
+export const fetchAllArticles = () => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/articles'
+  })
+);
+
+export const fetchCategorizedArticles = (category_id) => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/categories/${category_id}/articles'
+  })
+);
 //
 // export const fetchCurrentUserMeetups = () => (
 //   $.ajax({

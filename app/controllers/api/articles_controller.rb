@@ -1,6 +1,11 @@
 class Api::ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    debugger
+    if params[:category_id]
+      @articles = Category.find_by(id: params[:category_id]).articles
+    else
+      @articles = Article.all
+    end
     # render "api/articles/index"
     render :index
   end
