@@ -8,12 +8,18 @@ class Test extends React.Component {
     super(props);
 
     this.handleArticles = this.handleArticles.bind(this);
+    // this.handleArticle = this.handleArticle.bind(this);
   }
 
   handleArticles(e) {
     e.preventDefault();
     this.props.requestAllArticles();
   }
+
+  // handleArticle(e) {
+  //   e.preventDefault();
+  //   this.props.requestSingleArticle()
+  // }
 
   render() {
     return (

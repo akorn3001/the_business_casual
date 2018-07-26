@@ -1,16 +1,32 @@
 import * as ArticleAPIUtil from '../util/articles_api_util';
 
+// Variable names for action types
 export const RECEIVE_ALL_ARTICLES = "RECEIVE_ALL_ARTICLES";
+export const RECEIVE_SINGLE_ARTICLE = "RECEIVE_SINGLE_ARTICLE";
 
+// Actions dispatched by the store to the reducer
 export const receiveAllArticles = articles => ({
   type: RECEIVE_ALL_ARTICLES,
   articles
 });
 
+export const receiveSingleArticle = article => ({
+  type: RECEIVE_SINGLE_ARTICLE,
+  article
+});
+
+// Asynchronous functions to be called in our React components
 export const requestAllArticles = () => (dispatch) => {
   return ArticleAPIUtil.fetchAllArticles()
   .then(articles => {
     dispatch(receiveAllArticles(articles));
+  });
+};
+
+export const requestSingleArticle = (article_id) => (dispatch) => {
+  return ArticleAPIUtil.fetchSingleArticle(article_id)
+  .then(article => {
+    dispatch(receiveSingleArticle(article));
   });
 };
 

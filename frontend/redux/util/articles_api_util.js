@@ -1,5 +1,4 @@
 // FETCH ALL ARTICLES
-
 export const fetchAllArticles = () => (
   $.ajax({
     method: 'GET',
@@ -15,7 +14,6 @@ export const fetchCategorizedArticles = (category_id) => (
 );
 
 // FETCH SINGLE ARTICLE
-
 export const fetchSingleArticle = (article_id) => (
   $.ajax({
     method: 'GET',
@@ -24,7 +22,6 @@ export const fetchSingleArticle = (article_id) => (
 );
 
 // CREATE ARTICLE
-
 export const createArticle = (article) => {
   return $.ajax({
     method: 'POST',
@@ -34,7 +31,6 @@ export const createArticle = (article) => {
 };
 
 // EDIT ARTICLE
-
 export const updateSingleArticle = (article) => {
   return $.ajax({
     method: 'PATCH',
