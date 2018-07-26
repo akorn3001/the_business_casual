@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import Header from './header';
-import { logout } from '../../../redux/actions/session_actions';
+// import { logout } from '../../../redux/actions/session_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.session.currentUser,
+    // currentUser: state.session.currentUser,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return  {
-    logout: () => dispatch(logout())
+    // logout: () => dispatch(logout())
   };
 };
 

@@ -1,18 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-class Header extends Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
-
-    this.handleLogout = this.handleLogout.bind(this);
-  }
-
-  handleLogout() {
-    return (event) => {
-      event.preventDefault();
-      this.props.logout();
-    };
   }
 
   render() {
@@ -22,9 +13,9 @@ class Header extends Component {
     // TOP LEVEL NAVIGATION LINKS
     const aboutLink = <Link to="/about">About</Link>;
     const dashboardLink = <Link to="/profile">My Dashboard</Link>;
-    const signupLink = <Link to="/signup">Sign Up</Link>;
-    const signinLink = <Link to="/login">Sign In</Link>;
-    const signoutLink = <Link onClick={this.handleLogout()} to="/login">Sign Out</Link>;
+    const signUpLink = <Link to="/signup">Sign Up</Link>;
+    const signInLink = <Link to="/login">Sign In</Link>;
+    const signOutLink = <Link to="/login">Sign Out</Link>;
 
     // CATEGORY LINKS
     const category1Link = <Link to="/category1">Category-1</Link>;
@@ -49,21 +40,23 @@ class Header extends Component {
           <li className="header-link">{aboutLink}</li>
           <li className="header-list">{headerCategories}</li>
           <li className="header-link">{dashboardLink}</li>
-          <li className="header-link">{signoutLink}</li>
+          <li className="header-link">{signOutLink}</li>
         </ul>;
       } else {
           navigation =
           <ul className="header-items">
             <li className="header-link">{aboutLink}</li>
-            <li className="header-list">{headerCategories}</li>
+            <li className="header-list">{categoryList}</li>
             <li className="header-link">{dashboardLink}</li>
-            <li className="header-link">{signinLink}</li>
-            <li className="header-link">{signupLink}</li>
+            <li className="header-link">{signInLink}</li>
+            <li className="header-link">{signUpLink}</li>
           </ul>;
         }
 
     return (
-      <header>{navigation}</header>
+      <header>
+        {navigation}
+      </header>
     );
   }
 }
