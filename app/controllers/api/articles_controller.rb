@@ -1,4 +1,6 @@
 class Api::ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [ :index, :show ]
+
   def index
     if params[:category_id]
       @articles = Category.find_by(id: params[:category_id]).articles
@@ -16,23 +18,23 @@ class Api::ArticlesController < ApplicationController
   end
 
   def update
-    # @article = Article.find_by(id: params[:id])
-    #
-    # if @article.update_attributes(article_params)
-    #   redirect_to article_url(@article)
-    # else
-    #   render "api/articles/edit"
-    # end
+    find_article
+
+    if @article.update_attributes(article_params)
+      redirect_to article_url(@article)
+    else
+      render "api/articles/edit"
+    end
   end
 
   def create
-    # @article = Article.new(article_params)
-    #
-    # if @article.save
-    #   redirect_to article_url(@article)
-    # else
-    #   render "api/articles/new"
-    # end
+    @article = Article.new(article_params)
+
+    if @article.save
+      redirect_to article_url(@article)
+    else
+      render "api/articles/new"
+    end
   end
 
   def edit

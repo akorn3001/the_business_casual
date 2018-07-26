@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     # Top level articles
-    resources :articles, only: [:index]
+    resources :articles, except: [:show]
 
     resources :articles, only: [:show] do
       resources :categories, only: [:index]
