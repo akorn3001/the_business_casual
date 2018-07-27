@@ -1,47 +1,10 @@
-import merge from 'lodash/merge';
-//
-// import {
-//   RECEIVE_ERRORS,
-//   CLEAR_ERRORS
-// } from '../actions/error_actions';
-//
-// import { RECEIVE_SINGLE_USER } from '../actions/user_actions';
-//
-//
-// const ErrorsReducer = (state = [], action) => {
-//   let newState = merge({}, state);
-//
-//   Object.freeze(state);
-//   let errors;
-//   switch(action.type) {
-//     case RECEIVE_ERRORS:
-//       errors = action.errors;
-//       return action.errors;
-//     case CLEAR_ERRORS:
-//       errors = action.errors;
-//       return [];
-//     default:
-//       return state;
-//   }
-// };
-//
-// export default ErrorsReducer;
+import { combineReducers } from 'redux';
+import sessionErrorsReducer from './session_errors_reducer';
+import signUpErrorsReducer from './signup_errors_reducer';
 
-const ErrorsReducer = (state = [], action) => {
-  let newState = merge({}, state);
-  
-  Object.freeze(state);
-  let errors;
-  switch(action.type) {
-    case "RECEIVE_ERRORS":
-      errors = action.errors;
-      return action.errors;
-    case "CLEAR ERRORS":
-      errors = action.errors;
-      return [];
-    default:
-      return state;
-  }
-};
+const errorsReducer = combineReducers({
+  session: sessionErrorsReducer,
+  signUp: signUpErrorsReducer,
+});
 
-export default ErrorsReducer;
+export default errorsReducer;
