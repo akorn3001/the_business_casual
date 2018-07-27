@@ -1,51 +1,91 @@
-// import * as SessionAPIUtil from '../util/session_api_util';
-//
-// // Export constants
-// export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-// export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-// export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-//
-// // Export synchronous actions
-// export const receiveCurrentUser = currentUser => {
-//   return ({
-//     type: RECEIVE_CURRENT_USER,
-//     currentUser
-//   });
-// };
-//
-// export const receiveErrors = errors => {
-//   return ({
-//     type: RECEIVE_ERRORS,
-//     errors
-//   });
-// };
-//
-// export const clearErrors = () => ({
-//   type: CLEAR_ERRORS,
-//   errors: []
-// });
-//
-// // Export asynchronous actions
-// export const signup = user => {
-//   return dispatch => (
-//     SessionAPIUtil.signup(user).then(user => (
-//       dispatch(receiveCurrentUser(user))
-//     ), err => (
-//       dispatch(receiveErrors(err.responseJSON))
-//     ))
-//   );
-// };
-//
-// export const login = user => dispatch => (
-//   SessionAPIUtil.login(user).then(user => (
-//     dispatch(receiveCurrentUser(user))
-//   ), err => (
-//     dispatch(receiveErrors(err.responseJSON))
-//   ))
-// );
-//
-// export const logout = () => dispatch => (
-//   SessionAPIUtil.logout().then(user => (
-//     dispatch(receiveCurrentUser(null))
-//   ))
-// );
+import * as SessionAPIUtil from '../util/session_api_util';
+import * as UserAPIUtil from '../util/users_api_util';
+
+export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
+export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const RECEIVE_SIGNUP_ERRORS = "RECEIVE_SIGNUP_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const LOG_OUT = "LOG_OUT";
+
+export const receiveCurrentUser = (currentUser) => {
+  return {
+    type: RECEIVE_CURRENT_USER,
+    currentUser
+  };
+};
+
+export const receiveSessionErrors = (errors) => {
+  return {
+    type: RECEIVE_SESSION_ERRORS,
+    errors
+  };
+};
+
+export const receiveSignUpErrors = (errors) => {
+  return {
+    type: RECEIVE_SIGNUP_ERRORS,
+    errors
+  };
+};
+
+export const resetState = () => {
+  return {
+    type: LOG_OUT
+  };
+};
+
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
+
+export const deleteAllErrors = () => (dispatch) => {
+  return dispatch(clearErrors());
+};
+
+export const signUp = (user) => (dispatch) => {
+  return SessionAPIUtil.signUp(user)
+  .then(user => {
+    dispatch(receiveCurrentUser(user));
+    return user;
+  },
+  errors => {
+    dispatch(receiveSignUpErrors(errors.responseJSON));
+    return errors;
+  });
+};
+
+export const login = (user) => (dispatch) => {
+  return SessionAPIUtil.login(user)
+  .then(currentUser => {
+    dispatch(receiveCurrentUser(currentUser));
+    return currentUser;
+  },
+  errors => {
+    dispatch(receiveErrors(errors.responseJSON));
+    return errors;
+  });
+};
+
+export const logout= () => (dispatch) => {
+  return SessionAPIUtil.logout().then(response => {
+    dispatch(resetState());
+    dispatch(receiveCurrentUser(null));
+    return response;
+  });
+};
+
+export const requestCurrentUser = (userId) => (dispatch) => {
+  return UserAPIUtil.fetchSingleUser(userId).then(user => {
+    dispatch(receiveCurrentUser(user));
+    return user;
+  });
+};
+
+export const updateSingleUser = (user) => (dispatch) => {
+  return UserAPIUtil.updateSingleUser(user).then(user => {
+    dispatch(receiveCurrentUser(user));
+    return user;
+  });
+};
