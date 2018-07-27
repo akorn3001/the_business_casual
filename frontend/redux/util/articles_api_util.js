@@ -31,7 +31,7 @@ export const createArticle = (article) => {
 };
 
 // EDIT ARTICLE
-export const updateSingleArticle = (article) => {
+export const updateArticle = (article) => {
   return $.ajax({
     method: 'PATCH',
     url: `/api/articles/${article.id}`,
@@ -40,9 +40,9 @@ export const updateSingleArticle = (article) => {
 };
 
 // DELETE ARTICLE
-export const destroyArticle = (article_id) => {
+export const destroyArticle = (article) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/articles/${article_id}`
+    url: `api/articles/${article.id}`
   });
 };

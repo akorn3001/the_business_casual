@@ -5,6 +5,7 @@ import { RECEIVE_ALL_ARTICLES, RECEIVE_SINGLE_ARTICLE } from '../actions/test_ac
 const TestReducer = (state = {}, action) => {
   let newState;
   let article;
+
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_ARTICLES:
