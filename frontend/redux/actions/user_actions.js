@@ -1,41 +1,32 @@
-// import * as APIUtil from '../util/api_util';
-// import { receiveCurrentUser } from './session_actions';
-//
-// // Export constants
-// export const RECEIVE_SINGLE_USER = 'RECEIVE_SINGLE_USER';
-// export const RECEIVE_USERS = 'RECEIVE_ALL_USERS';
-//
-// // Export synchronous actions
-// export const receiveSingleUser = user => {
-//   return ({
-//     type: RECEIVE_SINGLE_USER,
-//     user
-//   });
-// };
-//
-// export const receiveUsers = users => ({
-//   type: RECEIVE_USERS,
-//   users
-// });
-//
-// // Export asynchronous actions
-// export const requestSingleUser = (userId) => (dispatch) => {
-//   return APIUtil.fetchSingleUser(userId)
-//     .then(user => dispatch(receiveSingleUser(user)));
-// };
-//
-// export const updateSingleUser = (user) => (dispatch) => {
-//   return APIUtil.updateSingleUser(user)
-//   .then(updatedUser => dispatch(receiveCurrentUser(updatedUser)));
-// };
-//
-// export const addHostParams = (user, formData, callback) => (dispatch) => {
-//   return APIUtil.addHostParams(user, formData, callback)
-//   .then(updatedUser => dispatch(receiveCurrentUser(updatedUser)));
-// };
-//
-//
-// // export const changeUserCity = (userId, cityId) => (dispatch) => {
-// //   return APIUtil.changeUserCity(userId, cityId)
-// //     .then(user => dispatch(receiveCurrentUser(user)));
-// // };
+import * as UserAPIUtil from '../util/users_api_util';
+
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
+export const RECEIVE_SINGLE_USER = "RECEIVE_SINGLE_USER";
+
+export const receiveAllUsers = (users) => {
+  return {
+    type: RECEIVE_ALL_USERS,
+    users
+  };
+};
+
+export const receiveSingleUser = (user) => {
+  return {
+    type: RECEIVE_SINGLE_USER,
+    user
+  };
+};
+
+export const requestAllUsers = () => dispatch => {
+  return UserAPIUtil.fetchAllUsers()
+  .then(users => {
+    dispatch(receiveAllUsers(users));
+  });
+};
+
+export const requestSingleUser = (user) => dispatch => {
+  return UserAPIUtil.fetchSingleUser(user)
+  .then(user => {
+    dispatch(receiveSingleUser(user));
+  });
+};
