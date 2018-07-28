@@ -26,15 +26,11 @@ const articlesReducer = (state = {}, action) => {
       newState = Object.assign({}, state);
       delete newState[article.id];
       return newState;
-    case CREATE_ARTICLE:
-      // asdasdasd
-    case UPDATE_ARTICLE:
-      // asdasdasd
-    case RECEIVE_ERRORS:
-      // asdasdasd
+    // case RECEIVE_ERRORS:
+    //   // asdasdasd
     default:
       return state;
   }
 };
 
-export default TestReducer;
+export default articlesReducer;

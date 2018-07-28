@@ -1,4 +1,4 @@
-import * as ArticleAPIUtil from '../util/article_api_util';
+import * as ArticleAPIUtil from '../util/articles_api_util';
 
 export const RECEIVE_ALL_ARTICLES = 'RECEIVE_ALL_ARTICLES';
 export const RECEIVE_SINGLE_ARTICLE = 'RECEIVE_SINGLE_ARTICE';
@@ -8,30 +8,47 @@ export const UPDATE_ARTICLE = 'UPDATE_ARTICLE';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 // Actions dispatched by the store to the reducer
-export const receiveAllArticles = (articles) => ({
-  type: RECEIVE_ALL_ARTICLES,
-  articles
-});
+export const receiveAllArticles = (articles) => {
+  return {
+    type: RECEIVE_ALL_ARTICLES,
+    articles
+  };
+};
 
-export const receiveSingleArticle = (article) => ({
-  type: RECEIVE_SINGLE_ARTICLE,
-  article
-});
+export const receiveSingleArticle = (article) => {
+  return {
+    type: RECEIVE_SINGLE_ARTICLE,
+    article
+  };
+};
 
-export const removeSingleArticle = (article) => ({
-  type: REMOVE_SINGLE_ARTICLE,
-  article,
-});
+export const createSingleArticle = (article) => {
+  return {
+    type: CREATE_ARTICLE,
+    article
+  };
+};
 
-export const updateArticle = (article) => ({
-  type: UPDATE_ARTICLE,
-  article
-});
+export const removeSingleArticle = (article) => {
+  return {
+    type: REMOVE_SINGLE_ARTICLE,
+    article
+  };
+};
 
-export const receiveErrors = (errors) => ({
-  type: RECEIVE_ERRORS,
-  errors
-});
+export const updateArticle = (article) => {
+  return {
+    type: UPDATE_ARTICLE,
+    article
+  };
+};
+
+export const receiveErrors = (errors) => {
+  return {
+    type: RECEIVE_ERRORS,
+    errors
+  };
+};
 
 // Asynchronous functions to be called in our React components
 export const requestAllArticles = () => (dispatch) => {
@@ -55,7 +72,6 @@ export const requestAllCategorizedArticles = (categoy_id) => {
   });
 };
 
-
 export const requestUpdateArticle = (article) => (dispatch) => (
   ArticleAPIUtil.updateArticle(article)
   .then(updatedArticle => {
@@ -73,6 +89,5 @@ export const requestCreateArticle = (article) => (dispatch) => (
 );
 
 export const requestRemoveArticle = (article) => (dispatch) => {
-  return ArticleAPIUtil.destroyArticle(article)
-  .then(() => dispatch(removeSingleArticle()));
+  return ArticleAPIUtil.destroyArticle(article).then(() => dispatch(removeSingleArticle()));
 };
