@@ -21,4 +21,14 @@ class Category < ApplicationRecord
   has_many :articles,
     through: :article_tags,
     source: :article
+
+  # belongs_to :parent_category,
+  #   primary_key: :id,
+  #   foreign_key: :parent_category_id,
+  #   class_name: "Category"
+  #
+  # has_many :child_categories,
+  #   primary_key: :id,
+  #   foreign_key: :child_category_id,
+  #   class_name: "Category"
 end
