@@ -23,7 +23,7 @@ const articlesReducer = (state = {}, action) => {
     case DELETE_SINGLE_ARTICLE:
       article = action.article;
       newState = Object.assign({}, state);
-      delete newState[article.id];
+      delete newState[action.articleID];
       return newState;
     default:
       return state;

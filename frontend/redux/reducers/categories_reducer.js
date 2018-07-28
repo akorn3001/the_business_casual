@@ -24,7 +24,7 @@ const categoriesReducer = (state = {}, action) => {
     case DELETE_SINGLE_CATEGORY:
       category = action.category;
       newState = Object.assign({}, state);
-      delete newState[category.id];
+      delete newState[action.categoryID];
       return newState;
     default:
       return state;

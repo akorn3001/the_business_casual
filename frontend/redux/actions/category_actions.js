@@ -29,10 +29,10 @@ export const receiveSingleCategory = (category) => {
 //   };
 // };
 
-export const deleteSingleCategory = (category) => {
+export const deleteSingleCategory = (category_id) => {
   return {
     type: DELETE_SINGLE_CATEGORY,
-    category
+    categoryID: category_id
   };
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestAllArticles, requestSingleArticle } from '../../redux/actions/article_actions';
-import { requestAllCategories, requestSingleCategory } from '../../redux/actions/category_actions';
+import { requestAllArticles, requestSingleArticle, requestDeleteArticle } from '../../redux/actions/article_actions';
+import { requestAllCategories, requestSingleCategory, requestDeleteCategory } from '../../redux/actions/category_actions';
 
 class Test extends React.Component {
   constructor(props) {
@@ -13,6 +13,8 @@ class Test extends React.Component {
     this.handleFirstCategory = this.handleFirstCategory.bind(this);
     this.handleSecondCategory = this.handleSecondCategory.bind(this);
     this.handleArticle = this.handleArticle.bind(this);
+    this.handleDeleteLastCategory = this.handleDeleteLastCategory.bind(this);
+    this.handleDeleteLastArticle = this.handleDeleteLastArticle.bind(this);
   }
 
   handleArticles(e) {
@@ -40,6 +42,16 @@ class Test extends React.Component {
     this.props.requestSingleCategory(2);
   }
 
+  handleDeleteLastCategory(e) {
+    e.preventDefault();
+    this.props.requestDeleteCategory(13);
+  }
+
+  handleDeleteLastArticle(e) {
+    e.preventDefault();
+    this.props.requestDeleteArticle(25);
+  }
+
   render() {
     return (
       <div>
@@ -49,6 +61,8 @@ class Test extends React.Component {
         <button onClick={this.handleFirstCategory}>Get First Category</button>
         <button onClick={this.handleSecondCategory}>Get Second Category</button>
         <button onClick={this.handleArticle}>Get First Article</button>
+        <button onClick={this.handleDeleteLastCategory}>Delete Last Category</button>
+        <button onClick={this.handleDeleteLastArticle}>Delete Last Article</button>
       </div>
 
     );
@@ -66,7 +80,9 @@ const mapDispatchToProps = dispatch => {
     requestAllArticles: () => dispatch(requestAllArticles()),
     requestAllCategories: () => dispatch(requestAllCategories()),
     requestSingleCategory: (category_id) => dispatch(requestSingleCategory(category_id)),
-    requestSingleArticle: (article_id) => dispatch(requestSingleArticle(article_id))
+    requestSingleArticle: (article_id) => dispatch(requestSingleArticle(article_id)),
+    requestDeleteCategory: (category_id) => dispatch(requestDeleteCategory(category_id)),
+    requestDeleteArticle: (article_id) => dispatch(requestDeleteArticle(article_id))
   };
 };
 

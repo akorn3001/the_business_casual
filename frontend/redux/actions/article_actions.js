@@ -29,10 +29,10 @@ export const receiveSingleArticle = (article) => {
 //   };
 // };
 
-export const deleteSingleArticle = (article) => {
+export const deleteSingleArticle = (article_id) => {
   return {
     type: DELETE_SINGLE_ARTICLE,
-    article
+    articleID: article_id
   };
 };
 
@@ -88,6 +88,6 @@ export const requestCreateArticle = (article) => (dispatch) => (
   }).fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
-export const requestDestroyArticle = (article_id) => (dispatch) => {
+export const requestDeleteArticle = (article_id) => (dispatch) => {
   return ArticleAPIUtil.destroyArticle(article_id).then(article => dispatch(deleteSingleArticle(article.id)));
 };

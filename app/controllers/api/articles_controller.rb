@@ -1,5 +1,5 @@
 class Api::ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [ :index, :show ]
+  # before_action :authenticate_user!, except: [ :index, :show ]
 
   def index
     if params[:category_id]
@@ -48,6 +48,13 @@ class Api::ArticlesController < ApplicationController
   end
 
   def destroy
+    find_article
+    if @article
+      Article.destroy(@article.id)
+      render 'api/articles/show'
+    else
+      render json: @article.errors.full_messages, status: 422
+    end
   end
 
   private
