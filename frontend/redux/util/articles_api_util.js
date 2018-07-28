@@ -40,9 +40,9 @@ export const updateArticle = (article) => {
 };
 
 // DELETE ARTICLE
-export const destroyArticle = (article) => {
+export const destroyArticle = (article_id) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/articles/${article.id}`
+    url: `api/articles/${article_id}`
   });
 };

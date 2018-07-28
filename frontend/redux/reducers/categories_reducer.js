@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_ALL_CATEGORIES,
   RECEIVE_SINGLE_CATEGORY,
-  REMOVE_SINGLE_CATEGORY,
+  DELETE_SINGLE_CATEGORY,
   RECEIVE_ERRORS
 } from '../actions/category_actions';
 
@@ -21,13 +21,11 @@ const categoriesReducer = (state = {}, action) => {
       // return merge({}, state, { [category.id]: category });
       newState = Object.assign({}, state, {[category.id]: category});
       return newState;
-    case REMOVE_SINGLE_CATEGORY:
+    case DELETE_SINGLE_CATEGORY:
       category = action.category;
       newState = Object.assign({}, state);
       delete newState[category.id];
       return newState;
-    // case RECEIVE_ERRORS:
-    //   // asdasdasd
     default:
       return state;
   }

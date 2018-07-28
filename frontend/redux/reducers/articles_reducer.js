@@ -3,8 +3,7 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_ALL_ARTICLES,
   RECEIVE_SINGLE_ARTICLE,
-  REMOVE_SINGLE_ARTICLE,
-  RECEIVE_ERRORS
+  DELETE_SINGLE_ARTICLE
 } from '../actions/article_actions';
 
 const articlesReducer = (state = {}, action) => {
@@ -21,13 +20,11 @@ const articlesReducer = (state = {}, action) => {
       // return merge({}, state, { [article.id]: article });
       newState = Object.assign({}, state, {[article.id]: article});
       return newState;
-    case REMOVE_SINGLE_ARTICLE:
+    case DELETE_SINGLE_ARTICLE:
       article = action.article;
       newState = Object.assign({}, state);
       delete newState[article.id];
       return newState;
-    // case RECEIVE_ERRORS:
-    //   // asdasdasd
     default:
       return state;
   }
