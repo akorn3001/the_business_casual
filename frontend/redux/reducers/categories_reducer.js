@@ -3,8 +3,7 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_ALL_CATEGORIES,
   RECEIVE_SINGLE_CATEGORY,
-  DELETE_SINGLE_CATEGORY,
-  RECEIVE_ERRORS
+  DELETE_SINGLE_CATEGORY
 } from '../actions/category_actions';
 
 const categoriesReducer = (state = {}, action) => {
