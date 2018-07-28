@@ -18,7 +18,9 @@ const categoriesReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_SINGLE_CATEGORY:
       category = action.category;
-      return merge({}, state, { [category.id]: category });
+      // return merge({}, state, { [category.id]: category });
+      newState = Object.assign({}, state, {[category.id]: category});
+      return newState;
     case REMOVE_SINGLE_CATEGORY:
       category = action.category;
       newState = Object.assign({}, state);

@@ -13,8 +13,8 @@ class Api::ArticlesController < ApplicationController
 
   def show
     find_article
-    render "api/articles/show.html.erb"
-    # render :show
+    # render "api/articles/show.html.erb"
+    render :show
   end
 
   def update

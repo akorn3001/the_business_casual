@@ -18,7 +18,9 @@ const articlesReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_SINGLE_ARTICLE:
       article = action.article;
-      return merge({}, state, { [article.id]: article });
+      // return merge({}, state, { [article.id]: article });
+      newState = Object.assign({}, state, {[article.id]: article});
+      return newState;
     case REMOVE_SINGLE_ARTICLE:
       article = action.article;
       newState = Object.assign({}, state);
