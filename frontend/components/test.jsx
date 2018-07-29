@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestAllArticles, requestSingleArticle, requestDeleteArticle } from '../../redux/actions/article_actions';
-import { requestAllCategories, requestSingleCategory, requestDeleteCategory } from '../../redux/actions/category_actions';
+import { requestAllArticles, requestSingleArticle, requestDeleteArticle } from '../redux/actions/article_actions';
+import { requestAllCategories, requestSingleCategory, requestDeleteCategory } from '../redux/actions/category_actions';
 
 class Test extends React.Component {
   constructor(props) {
