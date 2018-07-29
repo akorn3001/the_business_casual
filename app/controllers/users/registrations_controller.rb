@@ -14,7 +14,27 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
   def create
+    errors = {}
+    @user = User.find_by(username: params[:user][:username])
+    if @user
+      errors[:username] = ['That username already exists']
+      render json: errors, status: 422
+      return
+    end
 
+    @user = User.new(params.require(:user).permit(:username, :password))
+    if @user.username.length < 5
+      errors[:username] = ['Username must be at least 5 characters long']
+      errors[:password] = ['Password must be at least 6 characters long'] if @user.password.length < 6
+      render json: errors, status: 422
+    elsif @user.save
+      sign_in(@user)
+      render 'api/users/show'
+    else
+      errors[:username] = ["Username can't be blank"] if @user.username.length === 0
+      errors[:password] = ['Password must be at least 6 characters long'] if @user.password.length < 6
+      render json: errors, status: 422
+    end
   end
 
   # GET /resource/edit
