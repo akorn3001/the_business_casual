@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import CategoryIndexItem from './category_index_item';
 import { withRouter } from 'react-router-dom';
+import { requestDeleteCategory } from '../../../redux/actions/category_actions';
+import CategoryIndexItem from './category_index_item';
 
 const mapStateToProps = state => {
   return {
@@ -10,12 +11,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return  {
-    // attendMeetup: (meetupId) => dispatch(attendMeetup(meetupId)),
-    // unattendMeetup: (meetupId) => dispatch(unattendMeetup(meetupId)),
-    // requestSingleMeetup: (meetupId) => dispatch(requestSingleMeetup(meetupId))
+    requestDeleteCategory: (category_id) => dispatch(requestDeleteCategory(category_id))
 
   };
 };
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CategoryIndexItem));
+export default withRouter(connect(null, mapDispatchToProps)(CategoryIndexItem));

@@ -1,0 +1,26 @@
+.category-index {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 10px;
+}
+
+.category-index h3 {
+  text-decoration: underline;
+}
+
+.category-index-item {
+  width: 75%;
+  margin: 2px auto 2px auto;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #E8E8E8;
+}
+
+.category-index-item span:hover {
+  cursor: pointer;
+  color: red;
+}

@@ -29,7 +29,7 @@ export const createCategory = (category) => {
   return $.ajax({
     method: 'POST',
     url: 'api/categories',
-    data: category
+    data: { category }
   });
 };
 
