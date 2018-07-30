@@ -39,7 +39,7 @@ export const updateSingleCategory = (category) => {
   return $.ajax({
     method: 'PATCH',
     url: `/api/categories/${category.id}`,
-    data: category
+    data: { category }
   });
 };
 
