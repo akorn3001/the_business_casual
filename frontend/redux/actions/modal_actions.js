@@ -1,42 +1,28 @@
 export const SHOW_MODAL = "SHOW_MODAL";
 export const HIDE_MODAL = "HIDE_MODAL";
 
-export const showDeleteCategoryModal = (category) => {
+export const showDeleteCategoryModal = (category_id) => {
   return {
     type: SHOW_MODAL,
     modalType: 'DELETE_CATEGORY',
     modalProps: {
-      categoryID: category.id
+      categoryID: category_id
     }
   };
 };
 
-export const hideDeleteCategoryModal = (category) => {
-  return {
-    type: HIDE_MODAL,
-    modalType: 'DELETE_CATEGORY',
-    modalProps: {
-      categoryID: category.id
-    }
-  };
-};
-
-export const showDeleteArticleModal = (article) => {
+export const deleteArticle = (article_id) => {
   return {
     type: SHOW_MODAL,
     modalType: 'DELETE_ARTICLE',
     modalProps: {
-      articleID: article.id
+      articleID: article_id
     }
   };
 };
 
-export const hideDeleteArticleModal = (article) => {
+export const hideModal = () => {
   return {
-    type: HIDE_MODAL,
-    modalType: 'DELETE_ARTICLE',
-    modalProps: {
-      articleID: article.id
-    }
+    type: HIDE_MODAL
   };
 };

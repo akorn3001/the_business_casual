@@ -1,3 +1,5 @@
+import { SHOW_MODAL, HIDE_MODAL } from '../actions/modal_actions';
+
 const initialState = {
   modalType: null,
   modalProps: {}
