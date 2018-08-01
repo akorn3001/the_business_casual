@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { requestDeleteCategory } from '../../../redux/actions/category_actions';
-import { showModal } from '../../../redux/actions/modal_actions';
+import { showDeleteCategoryModal } from '../../../redux/actions/modal_actions';
 import CategoryIndexItem from './category_index_item';
 
 const mapStateToProps = state => {

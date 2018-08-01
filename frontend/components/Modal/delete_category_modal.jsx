@@ -1,33 +1,8 @@
-// import { deleteCategory, hideModal } from '../../redux/modal_actions'
-//
-// const DeleteCategoryModal = ({ category, dispatch }) => (
-//   <div>
-//     <p>Delete Category {category.name}?</p>
-//     <button onClick={() => {
-//       dispatch(deleteCategory(category.id)).then(() => {
-//         dispatch(hideModal())
-//       })
-//     }}>
-//       Yes
-//     </button>
-//     <button onClick={() => dispatch(hideModal())}>
-//       Nope
-//     </button>
-//   </div>
-// )
-//
-// export default connect(
-//   (state, ownProps) => ({
-//     category: state.categoriesById[ownProps.categoryId]
-//   })
-// )(DeleteCategoryModal)
-
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { requestDeleteCategory } from '../../redux/actions/category_actions';
 import { hideModal } from '../../redux/actions/modal_actions';
-import { selectAllCategories } from '../../redux/reducers/selectors';
 
 class DeleteCategoryModal extends React.Component {
   constructor(props) {
@@ -38,20 +13,23 @@ class DeleteCategoryModal extends React.Component {
 
   handleConfirm(e) {
     e.preventDefault();
-    const { category, requestDeleteCategory, hideModal } = this.props;
-    requestDeleteCategory(category.id).then(() => {
+    const { categoryID, requestDeleteCategory, hideModal } = this.props;
+    requestDeleteCategory(categoryID).then(() => {
       hideModal();
     });
   }
 
+
+
   render() {
+
     return (
       <div className="modal-wrapper">
-        <div className="delete-modal">
+        <div className="modal">
           <span>Are you sure?</span>
           <div className="modal-buttons">
-            <button className="modal-button" onClick={this.handleConfirm}>Yes</button>
-            <button className="modal-button" onClick={this.props.hideModal}>No</button>
+            <button className="modal-btn danger-button" onClick={this.handleConfirm}>Yes</button>
+            <button className="modal-btn safety-button" onClick={this.props.hideModal}>No</button>
           </div>
         </div>
       </div>
@@ -73,3 +51,34 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(connect(null, mapDispatchToProps)(DeleteCategoryModal));
+
+// import React from 'react';
+// import { connect } from 'react-redux';
+// import { withRouter } from 'react-router-dom';
+// import { requestDeleteCategory } from '../../redux/actions/category_actions';
+// import { hideModal } from '../../redux/actions/modal_actions';
+// import Modal from './modal';
+//
+// class DeleteCategoryModal extends React.Component {
+//   render() {
+//     const { category } = this.props;
+//
+//     return (
+//       <Modal
+//         dangerText={`Delete category ${123}?`}
+//         onDangerClick={() =>
+//           dispatch(requestDeleteCategory(category.id)).then(() => {
+//             dispatch(hideModal());
+//           })
+//         }
+//         onSafetyClick={() => dispatch(hideModal())}
+//       />
+//     );
+//   }
+// }
+//
+// export default withRouter(connect(
+//   (state, ownProps) => ({
+//     category: state.entities.categories[ownProps.categoryId]
+//   })
+// )(DeleteCategoryModal));
