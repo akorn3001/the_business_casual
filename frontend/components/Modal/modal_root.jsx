@@ -6,15 +6,14 @@ const MODAL_COMPONENTS = {
   'DELETE_CATEGORY': DeleteCategoryModal
 };
 
-const ModalRoot = ({ modalType, modalProps }) => {
-
+const ModalRoot = ({ modalProps, modalType }) => {
   if (!modalType) {
     return null;
   }
 
-  const SpecificModal = MODAL_COMPONENTS[modalType]
-  
-  return <SpecificModal {...modalProps} />
-}
+  const SpecificModal = MODAL_COMPONENTS[modalType];
 
-export default connect(state => state.modal)(ModalRoot)
+  return <SpecificModal {...modalProps} />;
+};
+
+export default connect(state => state.modal)(ModalRoot);

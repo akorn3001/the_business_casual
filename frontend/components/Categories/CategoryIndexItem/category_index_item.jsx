@@ -18,7 +18,6 @@ class CategoryIndexItem extends React.Component {
 
   render() {
     const { category } = this.props;
-    // const modal = <DeleteCategoryModal category={category} />;
 
     return (
       <div className="category-index-item-container">
