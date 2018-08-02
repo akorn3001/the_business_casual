@@ -16,10 +16,10 @@
   position: relative;
   text-align: center;
   font-size: 30px;
-  font-family: Arial;
+  font-family: Merriweather;
   width: 300px;
   background: #FFF;
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -34,6 +34,9 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 15px;
+  background-color: #EDEDED;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .modal-btn {
