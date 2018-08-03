@@ -22,11 +22,13 @@ export const fetchSingleArticle = (article_id) => (
 );
 
 // CREATE ARTICLE
-export const createArticle = (article) => {
+export const createArticle = (articleFormDataObject) => {
   return $.ajax({
     method: 'POST',
     url: 'api/articles',
-    data: { article }
+    data: articleFormDataObject,
+    contentType: false,
+    processData: false
   });
 };
 

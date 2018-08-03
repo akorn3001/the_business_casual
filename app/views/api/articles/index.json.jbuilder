@@ -5,6 +5,7 @@
 
 @articles.each do |article|
   json.set! article.id do
-    json.extract! article, :id, :title, :body, :published
+    json.extract! article, :id, :title, :body, :image, :published
+    json.imageURL article.image.attached? ? url_for(article.image) : nil
   end
 end

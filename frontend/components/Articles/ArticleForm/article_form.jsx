@@ -10,13 +10,14 @@ class ArticleForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      image: null
+      imageFile: null
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSaveForLater = this.handleSaveForLater.bind(this);
     this.handlePublish = this.handlePublish.bind(this);
     this.handleQuill = this.handleQuill.bind(this);
+    this.handleFile = this.handleFile.bind(this);
   }
 
   handleQuill(value) {
@@ -32,25 +33,40 @@ class ArticleForm extends React.Component {
 
   handlePublish(e) {
     e.preventDefault();
-    const category = { title: this.state.title, body: this.state.body, published: true };
+    const formDataObject = new FormData();
+    formDataObject.append('article[title]', this.state.title);
+    formDataObject.append('article[body]', this.state.body);
+    formDataObject.append('article[published]', true);
 
-    this.props.requestCreateArticle(category)
+    if (this.state.imageFile) {
+      formDataObject.append('article[image]', this.state.imageFile);
+    }
+
+    this.props.requestCreateArticle(formDataObject)
     .then(() => {
-      this.setState({ title: "", body: "" });
+      this.setState({ title: "", body: "", imageFile: null });
     });
   }
 
   handleSaveForLater(e) {
     e.preventDefault();
-    const category = { title: this.state.title, body: this.state.body };
-    debugger
-    this.props.requestCreateArticle(category)
+    const formDataObject = new FormData();
+    formDataObject.append('article[title]', this.state.title);
+    formDataObject.append('article[body]', this.state.body);
+
+    if (this.state.imageFile) {
+      formDataObject.append('article[image]', this.state.imageFile);
+    }
+
+    this.props.requestCreateArticle(formDataObject)
     .then(() => {
-      this.setState({ title: "", body: "" });
+      this.setState({ title: "", body: "", imageFile: null });
     });
   }
 
-
+  handleFile(e) {
+    this.setState({ imageFile: e.currentTarget.files[0] });
+  }
 
   render() {
     return (
@@ -61,7 +77,7 @@ class ArticleForm extends React.Component {
             className="article-form-title-input"
             type="text"
             placeholder="Add Title"
-            />
+          />
 
           <ReactQuill
             className="quill-element"
@@ -69,7 +85,10 @@ class ArticleForm extends React.Component {
             value={this.state.body}
             onChange={this.handleQuill}
             placeholder="Write your article here"
-            />
+          />
+
+          <input type="file" onChange={this.handleFile}/>
+
           <button className="article-form-button" onClick={this.handleSaveForLater}>Save for Later</button>
           <button className="article-form-button" onClick={this.handlePublish}>Publish Article</button>
 

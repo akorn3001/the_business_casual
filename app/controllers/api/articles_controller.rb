@@ -60,7 +60,7 @@ class Api::ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :body, :published)
+    params.require(:article).permit(:title, :body, :image, :published)
   end
 
   def find_article

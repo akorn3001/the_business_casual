@@ -7,6 +7,7 @@ class ArticleIndexItem extends React.Component {
     super(props);
 
     this.handleDeleteArticle = this.handleDeleteArticle.bind(this);
+    this.createMarkup = this.createMarkup.bind(this);
   }
 
   handleDeleteArticle(e) {
@@ -15,15 +16,18 @@ class ArticleIndexItem extends React.Component {
     showDeleteArticleModal(article.id);
   }
 
+  createMarkup() {
+    return { __html: this.props.article.body.slice(0, 300) + '...' };
+  }
+
   render() {
     const { article } = this.props;
-
     return (
       <div className="article-index-item-container">
         <div className="article-index-item">
-          <h3>{ article.title }</h3>
+          <h2>{ article.title }</h2>
           <br />
-          <h4>{ article.body }</h4>
+          <div dangerouslySetInnerHTML={this.createMarkup()} />
           <span className="delete-article" onClick={this.handleDeleteArticle}>×</span>
         </div>
       </div>
