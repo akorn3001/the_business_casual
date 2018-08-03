@@ -22,11 +22,13 @@ class ArticleIndexItem extends React.Component {
 
   render() {
     const { article } = this.props;
+
     return (
       <div className="article-index-item-container">
         <div className="article-index-item">
-          <h2>{ article.title }</h2>
+          <h1>{ article.title }</h1>
           <br />
+          <img src={article.imageURL} />
           <div dangerouslySetInnerHTML={this.createMarkup()} />
           <span className="delete-article" onClick={this.handleDeleteArticle}>×</span>
         </div>

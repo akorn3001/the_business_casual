@@ -73,10 +73,12 @@ class ArticleForm extends React.Component {
     return (
       <div id="article-form">
         <form>
+          <label htmlFor="title">Title: </label>
           <input
             onChange={this.handleChange('title')}
             className="article-form-title-input"
             value={this.state.title}
+            name="title"
             type="text"
             placeholder="Add Title"
           />

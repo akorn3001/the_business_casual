@@ -29,7 +29,7 @@ class Api::ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
+    
     if @article.save
       render 'api/articles/show'
     else

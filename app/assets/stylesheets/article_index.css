@@ -13,12 +13,18 @@
 .article-index-item {
   width: 85%;
   margin: 10px auto 10px auto;
-  padding: 5px;
+  padding: 5px 0 5px 0;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center
+}
+
+.article-index-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .article-index-item span:hover {
