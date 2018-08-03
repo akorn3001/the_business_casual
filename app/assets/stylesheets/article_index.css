@@ -1,0 +1,28 @@
+.article-index {
+  border: 1px solid black;
+  padding: 10px;
+  width: 70%;
+  margin: auto;
+}
+
+.article-index h1 {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.article-index-item {
+  width: 75%;
+  margin: 2px auto 2px auto;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #E8E8E8;
+}
+
+.article-index-item span:hover {
+  cursor: pointer;
+  color: red;
+}

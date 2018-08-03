@@ -1,0 +1,13 @@
+#article-form {
+  width: 600px;
+  margin-bottom: 300px;
+}
+
+.quill-element {
+  height: 200px;
+  margin-bottom: 200px;
+}
+
+.article-form-button:hover {
+  cursor: pointer;
+}

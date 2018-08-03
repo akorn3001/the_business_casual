@@ -5,6 +5,6 @@
 
 @articles.each do |article|
   json.set! article.id do
-    json.extract! article, :id, :title, :body
+    json.extract! article, :id, :title, :body, :published
   end
 end

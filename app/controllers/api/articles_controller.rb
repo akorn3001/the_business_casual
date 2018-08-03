@@ -23,7 +23,7 @@ class Api::ArticlesController < ApplicationController
     if @article.update_attributes(article_params)
       redirect_to article_url(@article)
     else
-      render "api/articles/edit"
+      render 'api/articles/edit'
     end
   end
 
@@ -31,20 +31,20 @@ class Api::ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to article_url(@article)
+      render 'api/articles/show'
     else
-      render "api/articles/new"
+      render json: @article.errors.full_messages, status: 422
     end
   end
 
   def edit
     find_article
-    render "api/articles/edit"
+    render 'api/articles/edit'
   end
 
   def new
     @article = Article.new
-    render "api/articles/new"
+    render 'api/articles/new'
   end
 
   def destroy
@@ -58,8 +58,9 @@ class Api::ArticlesController < ApplicationController
   end
 
   private
+
   def article_params
-    params.require(:article).permit(:author, :title, :body, :category_id)
+    params.require(:article).permit(:title, :body, :published)
   end
 
   def find_article

@@ -11,7 +11,7 @@ export const showDeleteCategoryModal = (category_id) => {
   };
 };
 
-export const deleteArticle = (article_id) => {
+export const showDeleteArticleModal = (article_id) => {
   return {
     type: SHOW_MODAL,
     modalType: 'DELETE_ARTICLE',

@@ -1,2 +1,2 @@
 
-json.extract! @article, :id, :title, :body
+json.extract! @article, :id, :title, :body, :published
