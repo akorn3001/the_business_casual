@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import DOMPurify from 'dompurify';
 import { connect } from 'react-redux';
 import { requestCreateArticle } from '../../../redux/actions/article_actions';
 
@@ -73,8 +74,9 @@ class ArticleForm extends React.Component {
       <div id="article-form">
         <form>
           <input
-            onChange={this.handleChange("title")}
+            onChange={this.handleChange('title')}
             className="article-form-title-input"
+            value={this.state.title}
             type="text"
             placeholder="Add Title"
           />

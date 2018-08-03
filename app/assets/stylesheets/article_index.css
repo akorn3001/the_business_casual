@@ -11,8 +11,8 @@
 }
 
 .article-index-item {
-  width: 70%;
-  margin: 5px auto 5px auto;
+  width: 85%;
+  margin: 10px auto 10px auto;
   padding: 5px;
   border: 1px solid black;
   display: flex;
