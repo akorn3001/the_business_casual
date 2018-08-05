@@ -13,7 +13,6 @@ const App = () => {
     <div>
       <Header />
       <ModalRoot />
-
       <Switch>
         <Route path={`/articles/:articleID`} exact component={ArticleShowContainer} />
         <Route path="/articles" component={ArticleIndexContainer} />
@@ -21,7 +20,6 @@ const App = () => {
 
       <ArticleForm />
       <CategoryIndexContainer />
-
     </div>
   );
 };

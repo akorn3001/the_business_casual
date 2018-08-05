@@ -19,3 +19,13 @@
 @import 'modal.css';
 @import 'quill.css';
 @import 'article_form.css';
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald');
+
+
+body {
+  background-color: #FFFAEF;
+}
+
+.modal-open {
+  overflow: hidden;
+}

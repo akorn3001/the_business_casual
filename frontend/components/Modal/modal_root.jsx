@@ -10,11 +10,12 @@ const MODAL_COMPONENTS = {
 
 const ModalRoot = ({ modalProps, modalType }) => {
   if (!modalType) {
+    document.body.classList.remove('modal-open')
     return null;
   }
 
   const SpecificModal = MODAL_COMPONENTS[modalType];
-
+  document.body.classList.add('modal-open')
   return <SpecificModal {...modalProps} />;
 };
 

@@ -18,7 +18,12 @@ class ArticleIndexItem extends React.Component {
   }
 
   createMarkup() {
-    return { __html: this.props.article.body.slice(0, 300) + '...' };
+    const { body } = this.props.article;
+    if (body.length > 300) {
+      return { __html: body.slice(0, 300) + '...' };
+    } else {
+      return {__html: body};
+    }
   }
 
   render() {
