@@ -21,6 +21,7 @@ const App = () => {
 
       <ArticleForm />
       <CategoryIndexContainer />
+
     </div>
   );
 };

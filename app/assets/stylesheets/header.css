@@ -20,6 +20,7 @@ header {
   position: fixed;
   width: 100%;
   z-index: 3;
+  box-shadow: 0 5px 6px 0 rgba(50,50,50,0.26);
 }
 
 .header-link, .header-list {
