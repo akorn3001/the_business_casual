@@ -23,8 +23,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
 
     @user = User.new(params.require(:user).permit(:username, :password))
-    if @user.username.length < 5
-      errors[:username] = ['Username must be at least 5 characters long']
+    if @user.username.length < 3
+      errors[:username] = ['Username must be at least 3 characters long']
       errors[:password] = ['Password must be at least 6 characters long'] if @user.password.length < 6
       render json: errors, status: 422
     elsif @user.save

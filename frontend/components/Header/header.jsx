@@ -8,7 +8,6 @@ class Header extends React.Component {
 
   render() {
     let navigation;
-    let categoryList;
 
     // TOP LEVEL NAVIGATION LINKS
     const aboutLink = <Link to="/about">About</Link>;
@@ -24,21 +23,14 @@ class Header extends React.Component {
     const category4Link = <Link to="/category4">Category-4</Link>;
     const category5Link = <Link to="/category5">Category-5</Link>;
 
-    categoryList =
-    <ul className="header-categories">
-      <li className="header-category">{category1Link}</li>
-      <li className="header-category">{category2Link}</li>
-      <li className="header-category">{category3Link}</li>
-      <li className="header-category">{category4Link}</li>
-      <li className="header-category">{category5Link}</li>
-    </ul>;
-
-
     if (this.props.currentUser) {
       navigation =
         <ul className="header-items">
           <li className="header-link">{aboutLink}</li>
-          <li className="header-list">{headerCategories}</li>
+          <li className="header-category">{category1Link}</li>
+          <li className="header-category">{category2Link}</li>
+          <li className="header-category">{category3Link}</li>
+          <li className="header-category">{category4Link}</li>
           <li className="header-link">{dashboardLink}</li>
           <li className="header-link">{signOutLink}</li>
         </ul>;
@@ -46,7 +38,10 @@ class Header extends React.Component {
           navigation =
           <ul className="header-items">
             <li className="header-link">{aboutLink}</li>
-            <li className="header-list">{categoryList}</li>
+            <li className="header-category">{category1Link}</li>
+            <li className="header-category">{category2Link}</li>
+            <li className="header-category">{category3Link}</li>
+            <li className="header-category">{category4Link}</li>
             <li className="header-link">{dashboardLink}</li>
             <li className="header-link">{signInLink}</li>
             <li className="header-link">{signUpLink}</li>

@@ -14,6 +14,8 @@
  *= require_self
  *= require toastr
  */
-@import url('https://fonts.googleapis.com/css?family=Merriweather|Poppins');
+@import 'header.css';
 @import 'category_index.css';
 @import 'modal.css';
+@import 'quill.css';
+@import 'article_form.css';

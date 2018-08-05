@@ -1,5 +1,5 @@
 .modal-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -10,16 +10,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1001;
 }
 
 .modal {
   position: relative;
   text-align: center;
   font-size: 30px;
-  font-family: Merriweather;
+  font-family: Arial;
   width: 300px;
   background: #FFF;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
 }
@@ -34,9 +35,6 @@
   flex-direction: row;
   justify-content: space-around;
   padding: 15px;
-  background-color: #EDEDED;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
 }
 
 .modal-btn {

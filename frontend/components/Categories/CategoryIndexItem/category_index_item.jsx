@@ -6,7 +6,6 @@ class CategoryIndexItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { modalOpen: false };
     this.handleDeleteCategory = this.handleDeleteCategory.bind(this);
   }
 

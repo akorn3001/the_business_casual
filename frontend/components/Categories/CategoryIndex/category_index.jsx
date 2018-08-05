@@ -1,6 +1,5 @@
 import React from 'react';
 import CategoryIndexItemContainer from '../CategoryIndexItem/category_index_item_container';
-// import CategoryIndexItem from '../CategoryIndexItem/category_index_item';
 
 class CategoryIndex extends React.Component {
   constructor(props) {
