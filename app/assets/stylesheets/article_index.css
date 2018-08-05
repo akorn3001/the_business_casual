@@ -13,7 +13,6 @@
 .article-index-item {
   width: 85%;
   margin: 10px auto 10px auto;
-  padding: 5px 0 5px 0;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -30,4 +29,18 @@
 .article-index-item span:hover {
   cursor: pointer;
   color: red;
+}
+
+.article-index-item div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.article-index-item a {
+  color: black;
+}
+
+.article-index-item a:hover {
+  color: #3D3D3D;
+  cursor: pointer;
 }

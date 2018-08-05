@@ -5,7 +5,7 @@
 //
 // // renders component if logged out, otherwise redirects to the root url
 //
-// const Auth = ({component: Component, path, loggedIn, currentUser}) => (
+// const Auth = ({ component: Component, path, loggedIn, currentUser}) => (
 //   <Route path={path} render={(props) => {
 //       if (!loggedIn) {
 //         return ( <Component {...props}/> )

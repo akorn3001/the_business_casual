@@ -1,0 +1,35 @@
+.header-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+header {
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  background-color: lightblue;
+  height: 40px;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+}
+
+.header-link, .header-list {
+  list-style-type: none;
+}
+
+.header-link a {
+  text-decoration: none;
+}
+
+.header-category {
+  list-style-type: none;
+}

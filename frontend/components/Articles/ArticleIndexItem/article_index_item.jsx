@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // import DeleteArticleModal from '../../Modal/delete_Article_modal';
 // import ModalRoot from '../../Modal/modal_root';
 
@@ -26,7 +27,7 @@ class ArticleIndexItem extends React.Component {
     return (
       <div className="article-index-item-container">
         <div className="article-index-item">
-          <h1>{ article.title }</h1>
+          <h1><Link to={`/articles/${article.id}`}>{ article.title }</Link></h1>
           <br />
           <img src={article.imageURL} />
           <div dangerouslySetInnerHTML={this.createMarkup()} />

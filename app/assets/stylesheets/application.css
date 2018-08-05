@@ -14,7 +14,7 @@
  *= require_self
  *= require toastr
  */
-
+@import 'header.css';
 @import 'category_index.css';
 @import 'modal.css';
 @import 'quill.css';

@@ -9,6 +9,7 @@
 .quill-element {
   height: 200px;
   margin-bottom: 45px;
+  z-index: 2;
 }
 
 .article-form-button:hover {
