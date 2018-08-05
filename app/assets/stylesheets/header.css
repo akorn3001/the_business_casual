@@ -12,10 +12,11 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 0;
   margin-bottom: 15px;
   background-color: #FF5008;
-  height: 70px;
+  height: 80px;
   box-sizing: border-box;
   position: fixed;
   width: 100%;
@@ -32,5 +33,17 @@ header {
   color: white;
   font-size: 20px;
   font-family: Oswald;
+}
 
+.auth-link {
+  padding: 6px;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: white;
+}
+
+.auth-link:hover {
+  background-color: white;
+  color: #FF5008;
+  transition-duration: 0.25s;
 }

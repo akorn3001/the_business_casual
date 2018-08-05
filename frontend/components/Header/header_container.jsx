@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
   return {
-    // currentUser: state.session.currentUser,
+    currentUser: state.session.currentUser,
   };
 };
 
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
+export default withRouter(connect(mapStateToProps, null)(Header));
