@@ -16,10 +16,8 @@ class ArticleIndex extends React.Component {
 
     return (
       <div className="article-index">
-        <div className="unpublished-articles-index">
-          <span>{articleType}</span>
-          { this.props.articles.map(article => <ArticleIndexItemContainer key={article.id} article={article} />) }
-        </div>
+        <h1>{articleType}</h1>
+        { this.props.articles.map(article => <ArticleIndexItemContainer key={article.id} article={article} />) }
       </div>
     );
   }

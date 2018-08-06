@@ -17,3 +17,12 @@
 .article-form-button:hover {
   cursor: pointer;
 }
+
+.article-form-submit-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto 0 auto;
+}

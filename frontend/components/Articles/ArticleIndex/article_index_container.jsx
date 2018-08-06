@@ -16,8 +16,6 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     allArticles: selectAllArticles(state),
-    unpublishedArticles: selectAllArticles(state).filter((article) => !article.published),
-    publishedArticles: selectAllArticles(state).filter((article) => article.published),
     articles
   };
 };

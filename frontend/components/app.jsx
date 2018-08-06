@@ -5,7 +5,7 @@ import ModalRoot from './Modal/modal_root';
 import CategoryIndexContainer from './Categories/CategoryIndex/category_index_container';
 import ArticleIndexContainer from './Articles/ArticleIndex/article_index_container';
 import ArticleShowContainer from './Articles/ArticleShow/article_show_container';
-import ArticleForm from './Articles/ArticleForm/article_form';
+import ArticleFormContainer from './Articles/ArticleForm/article_form_container';
 import SessionFormContainer from './Session/session_form_container';
 import AdminDashboardContainer from './AdminDashboard/admin_dashboard_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -16,6 +16,7 @@ const App = () => {
       <HeaderContainer />
       <ModalRoot />
       <AdminDashboardContainer />
+      <ArticleFormContainer />
 
       <Switch>
         <Route path={`/articles/:articleID`} exact component={ArticleShowContainer} />

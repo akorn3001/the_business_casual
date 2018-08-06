@@ -73,15 +73,17 @@ class ArticleForm extends React.Component {
     return (
       <div id="article-form">
         <form>
-          <label htmlFor="title">Title: </label>
-          <input
-            onChange={this.handleChange('title')}
-            className="article-form-title-input"
-            value={this.state.title}
-            name="title"
-            type="text"
-            placeholder="Add Title"
-          />
+          <div className="article-form-title">
+            <label htmlFor="title">Title: </label>
+            <input
+              onChange={this.handleChange('title')}
+              className="article-form-title-input"
+              value={this.state.title}
+              name="title"
+              type="text"
+              placeholder="Add Title"
+            />
+          </div>
 
           <ReactQuill
             className="quill-element"
@@ -93,8 +95,10 @@ class ArticleForm extends React.Component {
 
           <input type="file" onChange={this.handleFile}/>
 
-          <button className="article-form-button" onClick={this.handleSaveForLater}>Save for Later</button>
-          <button className="article-form-button" onClick={this.handlePublish}>Publish Article</button>
+          <div className="article-form-submit-buttons">
+            <button className="article-form-button form-submit" onClick={this.handleSaveForLater}>Save for Later</button>
+            <button className="article-form-button form-submit" onClick={this.handlePublish}>Publish Article</button>
+          </div>
 
         </form>
       </div>

@@ -1,6 +1,7 @@
 import ArticleForm from './article_form';
 import { connect } from 'react-redux';
 import { withRotuer } from 'react-router-dom';
+import { requestCreateArticle } from '../../../redux/actions/article_actions';
 
 // const mapStateToProps = (state) => {
 //   return {

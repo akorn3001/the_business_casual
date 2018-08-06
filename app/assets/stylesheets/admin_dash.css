@@ -10,3 +10,6 @@
   flex-direction: column;
   align-items: center;
 }
+
+.admin-dash-published-articles, .admin-dash-unpublished-articles {
+}

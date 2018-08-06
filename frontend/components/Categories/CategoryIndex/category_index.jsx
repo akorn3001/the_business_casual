@@ -42,7 +42,7 @@ class CategoryIndex extends React.Component {
 
     return (
       <div className="category-index">
-        <h3>Categories</h3>
+        <h1>Categories</h1>
         { categories.map(category => <CategoryIndexItemContainer key={category.id} category={category} />) }
 
         <hr />
