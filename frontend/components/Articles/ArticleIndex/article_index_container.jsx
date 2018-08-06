@@ -5,9 +5,20 @@ import { selectAllArticles } from '../../../redux/reducers/selectors';
 import ArticleIndex from './article_index';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
+  let articles;
+
+  if (ownProps.published) {
+    articles = selectAllArticles(state).filter((article) => article.published);
+  } else {
+    articles = selectAllArticles(state).filter((article) => !article.published);
+  }
+
   return {
-    articles: selectAllArticles(state)
+    allArticles: selectAllArticles(state),
+    unpublishedArticles: selectAllArticles(state).filter((article) => !article.published),
+    publishedArticles: selectAllArticles(state).filter((article) => article.published),
+    articles
   };
 };
 

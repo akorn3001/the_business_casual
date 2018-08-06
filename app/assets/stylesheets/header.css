@@ -1,17 +1,29 @@
 header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   margin-top: 0;
   margin-bottom: 15px;
   background-color: #FF5008;
-  height: 80px;
+  height: 115px;
   box-sizing: border-box;
   position: relative;
   width: 100%;
   z-index: 3;
   box-shadow: 0 5px 6px 0 rgba(50,50,50,0.26);
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a span {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Comfortaa;
+  letter-spacing: 8px;
+  color: #FFFF2D;
 }
 
 .header-items {
@@ -37,6 +49,9 @@ header {
 
 .auth-link {
   padding: 8px;
+  font-size: 20px;
+  font-family: Oswald;
+  background-color: #FF5008;
   border: 2px solid white;
   border-radius: 6px;
   color: white;
@@ -45,5 +60,6 @@ header {
 .auth-link:hover {
   background-color: white;
   color: #FF5008;
-  transition-duration: 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
 }

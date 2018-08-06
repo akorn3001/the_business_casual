@@ -7,6 +7,7 @@ import ArticleIndexContainer from './Articles/ArticleIndex/article_index_contain
 import ArticleShowContainer from './Articles/ArticleShow/article_show_container';
 import ArticleForm from './Articles/ArticleForm/article_form';
 import SessionFormContainer from './Session/session_form_container';
+import AdminDashboardContainer from './AdminDashboard/admin_dashboard_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -14,7 +15,8 @@ const App = () => {
     <div>
       <HeaderContainer />
       <ModalRoot />
-      
+      <AdminDashboardContainer />
+
       <Switch>
         <Route path={`/articles/:articleID`} exact component={ArticleShowContainer} />
         <Route path="/articles" component={ArticleIndexContainer} />

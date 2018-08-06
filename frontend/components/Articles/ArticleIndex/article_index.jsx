@@ -11,12 +11,15 @@ class ArticleIndex extends React.Component {
   }
 
   render() {
-    const { articles } = this.props;
+    let articleType;
+    articleType = (this.props.published ? "Published Articles" : "Unpublished Articles");
 
     return (
       <div className="article-index">
-        <h1>ALL ARTICLES</h1>
-        { articles.map(article => <ArticleIndexItemContainer key={article.id} article={article} />) }
+        <div className="unpublished-articles-index">
+          <span>{articleType}</span>
+          { this.props.articles.map(article => <ArticleIndexItemContainer key={article.id} article={article} />) }
+        </div>
       </div>
     );
   }

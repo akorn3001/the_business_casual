@@ -2,6 +2,7 @@
   border: 1px solid black;
   display: inline-block;
   padding: 10px;
+  background-color: white;
 }
 
 .category-index h3 {
@@ -10,11 +11,11 @@
 }
 
 .category-index-item {
-  width: 75%;
+  width: 85%;
   margin: 2px auto 2px auto;
   padding: 5px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,4 +25,15 @@
 .category-index-item span:hover {
   cursor: pointer;
   color: red;
+}
+
+.create-category-form-input {
+  width: 100%;
+  margin: auto;
+}
+
+.category-index-create-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

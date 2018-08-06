@@ -42,26 +42,32 @@ class CategoryIndex extends React.Component {
 
     return (
       <div className="category-index">
-        <h3>ARTICLE CATEGORIES</h3>
+        <h3>Categories</h3>
         { categories.map(category => <CategoryIndexItemContainer key={category.id} category={category} />) }
 
         <hr />
 
-        <span>Add Category</span>
-        <div className="create-category">
-          <form className="create-category-form" onSubmit={this.handleSubmit}>
-            <input
-              className="create-category-form-input"
-              onChange={this.handleChange('newCategoryName')}
-              type="text"
-              value={this.state.newCategoryName}
-              placeholder="Enter Category Name" />
+        <div className="category-index-create-category">
+          <span><strong>Add Category</strong></span>
+          <div className="create-category">
+            <form className="create-category-form" onSubmit={this.handleSubmit}>
+              <div>
+                <input
+                  className="create-category-form-input"
+                  onChange={this.handleChange('newCategoryName')}
+                  type="text"
+                  value={this.state.newCategoryName}
+                  placeholder="Enter Category Name"
+                />
+              </div>
 
               <br/>
 
-              <button className="create-category-submit" type="submit">Create</button>
-          </form>
+              <button className="create-category-submit form-submit" type="submit">Create Category</button>
+            </form>
+          </div>
         </div>
+
       </div>
     );
   }

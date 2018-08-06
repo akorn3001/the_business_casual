@@ -1,0 +1,18 @@
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Oswald;
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #339B3C;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #1D7C26;
+  transition-duration: 0.25s;
+}

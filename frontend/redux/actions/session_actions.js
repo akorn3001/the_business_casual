@@ -8,6 +8,7 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const LOG_OUT = "LOG_OUT";
 
 export const receiveCurrentUser = (currentUser) => {
+  debugger
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser
@@ -57,10 +58,11 @@ export const signUp = (user) => (dispatch) => {
 };
 
 export const login = (user) => (dispatch) => {
+  debugger
   return SessionAPIUtil.login(user)
-  .then(currentUser => {
-    dispatch(receiveCurrentUser(currentUser));
-    return currentUser;
+  .then(user => {
+    dispatch(receiveCurrentUser(user));
+    return user;
   },
   errors => {
     dispatch(receiveSessionErrors(errors.responseJSON));

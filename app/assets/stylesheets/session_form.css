@@ -24,22 +24,10 @@
   font-family: Merriweather;
 }
 
-.session-form-submit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-family: Oswald;
-  font-size: 20px;
-  margin-top: 10px;
-  width: 200px;
-  height: 40px;
-  border-radius: 5px;
-  background-color: #339B3C;
-  cursor: pointer;
+.session-form-password-input, .session-form-username-input {
+  font-size: 18px;
 }
 
-.session-form-submit:hover {
-  background-color: #1D7C26;
-  transition-duration: 0.25s;
+.session-form-submit {
+  margin-top: 30px;
 }

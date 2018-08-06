@@ -1,0 +1,12 @@
+.admin-dash {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.admin-dash-category-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

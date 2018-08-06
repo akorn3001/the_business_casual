@@ -8,7 +8,7 @@ class Header extends React.Component {
 
   handleLogout(e) {
     const { logout } = this.props;
-    debugger
+
     e.preventDefault();
     logout();
   }
@@ -70,6 +70,7 @@ class Header extends React.Component {
 
       return (
         <header>
+          <Link to="/"><span>The Business Casual</span></Link>
           {navigation}
         </header>
       );

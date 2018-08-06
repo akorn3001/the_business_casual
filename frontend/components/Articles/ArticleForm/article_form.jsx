@@ -102,16 +102,4 @@ class ArticleForm extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//
-//   };
-// };
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    requestCreateArticle: (article) => dispatch(requestCreateArticle(article))
-  };
-};
-
-export default connect(null, mapDispatchToProps)(ArticleForm);
+export default ArticleForm;
