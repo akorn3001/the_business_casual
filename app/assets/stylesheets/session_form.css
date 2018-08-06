@@ -1,0 +1,45 @@
+#session-form-wrapper {
+  width: 300px;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-form span {
+  margin: 5px;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Merriweather;
+}
+
+.session-form > * {
+  font-family: Merriweather;
+}
+
+.session-form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: Oswald;
+  font-size: 20px;
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #339B3C;
+  cursor: pointer;
+}
+
+.session-form-submit:hover {
+  background-color: #1D7C26;
+  transition-duration: 0.25s;
+}

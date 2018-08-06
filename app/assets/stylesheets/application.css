@@ -15,6 +15,7 @@
  *= require toastr
  */
 @import 'header.css';
+@import 'session_form.css';
 @import 'category_index.css';
 @import 'modal.css';
 @import 'quill.css';

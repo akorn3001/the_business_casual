@@ -6,6 +6,7 @@ import CategoryIndexContainer from './Categories/CategoryIndex/category_index_co
 import ArticleIndexContainer from './Articles/ArticleIndex/article_index_container';
 import ArticleShowContainer from './Articles/ArticleShow/article_show_container';
 import ArticleForm from './Articles/ArticleForm/article_form';
+import SessionFormContainer from './Session/session_form_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -13,10 +14,13 @@ const App = () => {
     <div>
       <HeaderContainer />
       <ModalRoot />
+      
       <Switch>
         <Route path={`/articles/:articleID`} exact component={ArticleShowContainer} />
         <Route path="/articles" component={ArticleIndexContainer} />
-      </Switch>
+        <Route path="/login" component={SessionFormContainer} />
+        <Route path="/signup" component={SessionFormContainer} />
+    </Switch>
     </div>
   );
 };

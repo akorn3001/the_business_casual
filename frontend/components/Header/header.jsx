@@ -6,9 +6,14 @@ class Header extends React.Component {
     super(props);
   }
 
-  render() {
+  handleLogout(e) {
+    const { logout } = this.props;
     debugger
+    e.preventDefault();
+    logout();
+  }
 
+  render() {
     const { currentUser } = this.props;
 
     let navigation;
@@ -18,7 +23,7 @@ class Header extends React.Component {
     const signUpLink = <Link to="/signup" className="auth-link">Sign Up</Link>;
     const dashboardLink = <Link to="/adminDash">Admin Dashboard</Link>;
     const signInLink = <Link to="/login" className="auth-link">Sign In</Link>;
-    const signOutLink = <Link to="/login" className="auth-link">Sign Out</Link>;
+    const signOutButton = <button className="auth-link" onClick={this.handleLogout}>Sign Out</button>;
 
     // CATEGORY LINKS
     const category1Link = <Link to="/category1">Category-1</Link>;
@@ -36,7 +41,7 @@ class Header extends React.Component {
             <li className="header-category">{category3Link}</li>
             <li className="header-category">{category4Link}</li>
             <li className="header-link">{dashboardLink}</li>
-            <li className="header-link">{signOutLink}</li>
+            <li className="header-link">{signOutButton}</li>
           </ul>;
         } else {
           navigation =
@@ -46,7 +51,7 @@ class Header extends React.Component {
             <li className="header-category">{category2Link}</li>
             <li className="header-category">{category3Link}</li>
             <li className="header-category">{category4Link}</li>
-            <li className="header-link">{signOutLink}</li>
+            <li className="header-link">{signOutButton}</li>
           </ul>;
         }
       } else {

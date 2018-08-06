@@ -21,6 +21,7 @@ export const requestAllUsers = () => dispatch => {
   return UserAPIUtil.fetchAllUsers()
   .then(users => {
     dispatch(receiveAllUsers(users));
+    return users;
   });
 };
 
@@ -28,5 +29,6 @@ export const requestSingleUser = (user) => dispatch => {
   return UserAPIUtil.fetchSingleUser(user)
   .then(user => {
     dispatch(receiveSingleUser(user));
+    return user;
   });
 };

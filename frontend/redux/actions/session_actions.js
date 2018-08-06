@@ -63,12 +63,12 @@ export const login = (user) => (dispatch) => {
     return currentUser;
   },
   errors => {
-    dispatch(receiveErrors(errors.responseJSON));
+    dispatch(receiveSessionErrors(errors.responseJSON));
     return errors;
   });
 };
 
-export const logout= () => (dispatch) => {
+export const logout = () => (dispatch) => {
   return SessionAPIUtil.logout().then(response => {
     dispatch(resetState());
     dispatch(receiveCurrentUser(null));
@@ -76,16 +76,16 @@ export const logout= () => (dispatch) => {
   });
 };
 
-export const requestCurrentUser = (userId) => (dispatch) => {
-  return UserAPIUtil.fetchSingleUser(userId).then(user => {
+export const requestCurrentUser = (user_id) => (dispatch) => {
+  return UserAPIUtil.fetchSingleUser(user_id).then(user => {
     dispatch(receiveCurrentUser(user));
     return user;
   });
 };
 
 export const updateSingleUser = (user) => (dispatch) => {
-  return UserAPIUtil.updateSingleUser(user).then(user => {
-    dispatch(receiveCurrentUser(user));
+  return UserAPIUtil.updateSingleUser(user).then(updatedUser => {
+    dispatch(receiveCurrentUser(updatedUser));
     return user;
   });
 };
