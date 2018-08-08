@@ -93,11 +93,11 @@ class ArticleForm extends React.Component {
             placeholder="Write your article here"
           />
 
-          <input type="file" onChange={this.handleFile}/>
-
           <div className="article-form-submit-buttons">
-            <button className="article-form-button form-submit" onClick={this.handleSaveForLater}>Save for Later</button>
-            <button className="article-form-button form-submit" onClick={this.handlePublish}>Publish Article</button>
+            <input name="file-input" id="file-input" type="file" accept="image/*" onChange={this.handleFile}/>
+            <label className="file-input-label form-submit" htmlFor="file-input">Upload an Image!</label>
+            <button className="article-form-button form-submit" onClick={this.handleSaveForLater}>Save for Later!</button>
+            <button className="article-form-button form-submit" onClick={this.handlePublish}>Publish Article!</button>
           </div>
 
         </form>

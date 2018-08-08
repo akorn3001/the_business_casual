@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+  before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -10,11 +10,13 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+
     @user = User.find_for_database_authentication(username: params[:user][:username])
     errors = {}
 
     if @user && @user.valid_password?(params[:user][:password])
       sign_in @user
+
       render 'api/users/show'
     else
       if User.find_by(username: params[:user][:username]) == nil

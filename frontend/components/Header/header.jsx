@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogout(e) {
-    const { logout } = this.props;
-
     e.preventDefault();
-    logout();
+    this.props.logout();
   }
 
   render() {

@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import Root from './root';
 import configureStore from '../redux/store/store';
 
+import { logout, login, signUp } from '../redux/actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -18,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   store = configureStore();
   window.store = store;
+  window.logout = logout;
+  window.login = login;
+  window.signUp = signUp;
 
   const root = document.getElementById('root');
   ReactDOM.render(

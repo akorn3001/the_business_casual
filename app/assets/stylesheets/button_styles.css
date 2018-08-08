@@ -5,7 +5,7 @@
   color: white;
   font-family: Oswald;
   font-size: 20px;
-  width: 200px;
+  width: 150px;
   height: 40px;
   border-radius: 5px;
   background-color: #339B3C;
@@ -15,4 +15,17 @@
 .form-submit:hover {
   background-color: #1D7C26;
   transition-duration: 0.25s;
+}
+
+#file-input {
+  visibility: hidden;
+  position: absolute;
+}
+
+.file-input-label {
+  background-color: #5154e2;
+}
+
+.file-input-label:hover {
+  background-color: #2629bf;
 }

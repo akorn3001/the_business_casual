@@ -6,6 +6,7 @@ import { withRouter } from 'react-router-dom';
 const mapStateToProps = state => {
   return {
     currentUser: state.session.currentUser,
+    loggedIn: Boolean(state.session.currentUser)
   };
 };
 
