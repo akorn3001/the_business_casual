@@ -5,9 +5,12 @@ import { showDeleteArticleModal } from '../../redux/actions/modal_actions';
 import { selectAllArticles } from '../../redux/reducers/selectors';
 import ArticleShow from '../Presentational/article_show';
 
-const mapStateToProps = (state) => {
+
+const mapStateToProps = (state, ownProps) => {
+  const article = state.entities.articles[ownProps.match.params.articleID];
+
   return {
-    articles: selectAllArticles(state)
+    article
   };
 };
 

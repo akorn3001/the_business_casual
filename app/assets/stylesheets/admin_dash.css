@@ -1,15 +1,13 @@
 .admin-dash {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
+  height: 100%;
 }
 
-.admin-dash-category-index {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.admin-dash-left-panel {
 
-.admin-dash-published-articles, .admin-dash-unpublished-articles {
+  width: 33%;
+  height: 100%;
+  background-color: #444444;
+  color: white;
 }

@@ -70,7 +70,7 @@ class Header extends React.Component {
 
       return (
         <header>
-          <Link to="/"><span>The Business Casual</span></Link>
+          <Link to="/articles"><span>The Business Casual</span></Link>
           {navigation}
         </header>
       );

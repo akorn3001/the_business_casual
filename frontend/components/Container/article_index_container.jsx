@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   let articles;
 
   if (ownProps.published) {
-    articles = selectAllArticles(state).filter((article) => article.published);
+    articles = selectAllArticles(state).filter((article) => article.published).reverse();
   } else {
     articles = selectAllArticles(state).filter((article) => !article.published);
   }

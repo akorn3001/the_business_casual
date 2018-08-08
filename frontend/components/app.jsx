@@ -8,6 +8,7 @@ import ArticleShowContainer from './Container/article_show_container';
 import ArticleFormContainer from './Container/article_form_container';
 import SessionFormContainer from './Container/session_form_container';
 import AdminDashboardContainer from './Container/admin_dashboard_container';
+import HomePageContainer from './Container/home_page_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -15,12 +16,10 @@ const App = () => {
     <div>
       <HeaderContainer />
       <ModalRoot />
-      <AdminDashboardContainer />
-      <ArticleFormContainer />
 
       <Switch>
+        <Route path="/articles" exact component={HomePageContainer} />
         <Route path={`/articles/:articleID`} exact component={ArticleShowContainer} />
-        <Route path="/articles" component={ArticleIndexContainer} />
         <Route path="/login" component={SessionFormContainer} />
         <Route path="/signup" component={SessionFormContainer} />
     </Switch>
