@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestDeleteArticle } from '../../../redux/actions/article_actions';
-import { showDeleteArticleModal } from '../../../redux/actions/modal_actions';
-import ArticleIndexItem from './article_index_item';
+import { requestDeleteArticle } from '../../redux/actions/article_actions';
+import { showDeleteArticleModal } from '../../redux/actions/modal_actions';
+import ArticleIndexItem from '../Presentational/article_index_item';
 
 const mapStateToProps = state => {
   return {

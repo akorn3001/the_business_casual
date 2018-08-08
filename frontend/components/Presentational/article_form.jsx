@@ -1,8 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ReactQuill from 'react-quill';
 import DOMPurify from 'dompurify';
-import { connect } from 'react-redux';
-import { requestCreateArticle } from '../../../redux/actions/article_actions';
 
 class ArticleForm extends React.Component {
   constructor(props) {

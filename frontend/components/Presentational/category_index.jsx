@@ -1,5 +1,5 @@
 import React from 'react';
-import CategoryIndexItemContainer from '../CategoryIndexItem/category_index_item_container';
+import CategoryIndexItemContainer from '../Container/category_index_item_container';
 
 class CategoryIndex extends React.Component {
   constructor(props) {

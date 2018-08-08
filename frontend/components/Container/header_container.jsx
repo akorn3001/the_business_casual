@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import Header from './header';
-import { logout } from '../../redux/actions/session_actions';
 import { withRouter } from 'react-router-dom';
+import { logout } from '../../redux/actions/session_actions';
+import Header from '../Presentational/header';
 
 const mapStateToProps = state => {
   return {

@@ -1,6 +1,4 @@
 import React from 'react';
-import DeleteCategoryModal from '../../Modal/delete_category_modal';
-import ModalRoot from '../../Modal/modal_root';
 
 class CategoryIndexItem extends React.Component {
   constructor(props) {

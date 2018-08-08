@@ -1,5 +1,5 @@
 import React from 'react';
-import ArticleIndexItemContainer from '../ArticleIndexItem/article_index_item_container';
+import ArticleIndexItemContainer from '../Container/article_index_item_container'
 
 class ArticleIndex extends React.Component {
   constructor(props) {

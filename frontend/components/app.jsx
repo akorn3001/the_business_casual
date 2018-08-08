@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
-import HeaderContainer from './header/header_container';
+import HeaderContainer from './Container/header_container';
 import ModalRoot from './Modal/modal_root';
-import CategoryIndexContainer from './Categories/CategoryIndex/category_index_container';
-import ArticleIndexContainer from './Articles/ArticleIndex/article_index_container';
-import ArticleShowContainer from './Articles/ArticleShow/article_show_container';
-import ArticleFormContainer from './Articles/ArticleForm/article_form_container';
-import SessionFormContainer from './Session/session_form_container';
-import AdminDashboardContainer from './AdminDashboard/admin_dashboard_container';
+import CategoryIndexContainer from './Container/category_index_container';
+import ArticleIndexContainer from './Container/article_index_container';
+import ArticleShowContainer from './Container/article_show_container';
+import ArticleFormContainer from './Container/article_form_container';
+import SessionFormContainer from './Container/session_form_container';
+import AdminDashboardContainer from './Container/admin_dashboard_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {

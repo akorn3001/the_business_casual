@@ -1,8 +1,8 @@
-import SessionForm from './session_form';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { signUp, login, deleteAllErrors } from '../../redux/actions/session_actions';
 import { requestAllUsers } from '../../redux/actions/user_actions';
+import SessionForm from '../Presentational/session_form';
 
 const mapStateToProps = (state, ownProps) => {
   const formType = ownProps.location.pathname === "/signup" ? "signup" : "login";

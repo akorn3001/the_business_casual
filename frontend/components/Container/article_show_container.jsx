@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestDeleteArticle, requestSingleArticle } from '../../../redux/actions/article_actions';
-import { showDeleteArticleModal } from '../../../redux/actions/modal_actions';
-import { selectAllArticles } from '../../../redux/reducers/selectors';
-import ArticleShow from './article_show';
+import { requestDeleteArticle, requestSingleArticle } from '../../redux/actions/article_actions';
+import { showDeleteArticleModal } from '../../redux/actions/modal_actions';
+import { selectAllArticles } from '../../redux/reducers/selectors';
+import ArticleShow from '../Presentational/article_show';
 
 const mapStateToProps = (state) => {
   return {

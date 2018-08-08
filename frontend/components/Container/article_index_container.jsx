@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { requestAllArticles } from '../../../redux/actions/article_actions';
-import { selectAllArticles } from '../../../redux/reducers/selectors';
-import ArticleIndex from './article_index';
+import { requestAllArticles } from '../../redux/actions/article_actions';
+import { selectAllArticles } from '../../redux/reducers/selectors';
+import ArticleIndex from '../Presentational/article_index';
 
 
 const mapStateToProps = (state, ownProps) => {

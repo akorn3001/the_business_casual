@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { selectAllArticles } from '../../redux/reducers/selectors';
-import AdminDashboard from './admin_dashboard';
+import AdminDashboard from '../Presentational/admin_dashboard';
 
 const mapStateToProps = (state) => {
   return {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CategoryIndexContainer from '../Categories/CategoryIndex/category_index_container';
-import ArticleFormContainer from '../Articles/ArticleForm/article_form_container';
-import ArticleIndexContainer from '../Articles/ArticleIndex/article_index_container';
+import CategoryIndexContainer from '../Container/category_index_container';
+import ArticleFormContainer from '../Container/article_form_container';
+import ArticleIndexContainer from '../Container/article_index_container';
 
 class AdminDashboard extends React.Component {
   constructor(props) {
