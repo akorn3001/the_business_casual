@@ -1,0 +1,17 @@
+.article-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 66%;
+  margin: auto;
+  background-color: white;
+}
+
+.article-show-body {
+  font-size: 20px;
+}
+
+.article-show h1 {
+  text-align: center;
+  font-family: PT Serif;
+}

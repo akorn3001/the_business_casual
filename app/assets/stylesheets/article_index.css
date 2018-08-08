@@ -14,6 +14,10 @@
   background-color: white;
 }
 
+.article-index-item h2 {
+  font-family: PT Serif;
+}
+
 .article-index-item img {
   width: 90%;
   height: auto;

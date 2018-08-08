@@ -5,21 +5,28 @@ class ArticleShow extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { thisArticle: null };
+    this.createMarkup = this.createMarkup.bind(this);
   }
 
   componentDidMount() {
     this.props.requestSingleArticle(this.props.match.params.articleID);
+    window.scrollTo(0, 0);
+  }
+
+  createMarkup() {
+    const { body } = this.props.article;
+    return {__html: body};
   }
 
   render() {
     let component;
     if (this.props.article) {
-      debugger
+      const { article } = this.props;
       component =
-      <div className="article-show-page">
-        <h1>{this.props.article.title}</h1>
-        <img src={this.props.article.imageURL} />
+      <div className="article-show">
+        <h1>{article.title}</h1>
+        <img src={article.imageURL} />
+        <div className="article-show-body" dangerouslySetInnerHTML={this.createMarkup()} />
       </div>;
     } else {
       component = null;

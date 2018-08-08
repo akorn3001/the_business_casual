@@ -32,7 +32,7 @@ class ArticleIndexItem extends React.Component {
         <div className="article-index-item">
           <h2><Link to={`/articles/${article.id}`}>{ article.title }</Link></h2>
           <br />
-          <img src={article.imageURL} />
+          <Link to={`/articles/${article.id}`}><img src={article.imageURL} /></Link>
           <div dangerouslySetInnerHTML={this.createMarkup()} />
           <span className="delete-article" onClick={this.handleDeleteArticle}>×</span>
         </div>
