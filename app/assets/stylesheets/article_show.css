@@ -5,6 +5,12 @@
   width: 66%;
   margin: auto;
   background-color: white;
+  -webkit-box-shadow: 0px 0px 2px 2px #ccc;
+}
+
+.article-show-title, .article-show-image, .article-show-body {
+  width: 90%;
+  margin: auto;
 }
 
 .article-show-body {

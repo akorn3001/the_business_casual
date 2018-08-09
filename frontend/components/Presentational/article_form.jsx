@@ -69,6 +69,12 @@ class ArticleForm extends React.Component {
   }
 
   render() {
+    let fileName;
+    fileName =
+    (this.state.imageFile ?
+      <span id="image-upload-message">{this.state.imageFile.name} successfully attached</span>
+        : null);
+
     return (
       <div id="article-form">
         <form>
@@ -98,6 +104,7 @@ class ArticleForm extends React.Component {
             <button className="article-form-button form-submit" onClick={this.handleSaveForLater}>Save for Later!</button>
             <button className="article-form-button form-submit" onClick={this.handlePublish}>Publish Article!</button>
           </div>
+          {fileName}
 
         </form>
       </div>

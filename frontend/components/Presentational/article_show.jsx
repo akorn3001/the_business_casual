@@ -24,8 +24,8 @@ class ArticleShow extends React.Component {
       const { article } = this.props;
       component =
       <div className="article-show">
-        <h1>{article.title}</h1>
-        <img src={article.imageURL} />
+        <h1 className="article-show-title">{article.title}</h1>
+        <img className="article-show-image" src={article.imageURL} />
         <div className="article-show-body" dangerouslySetInnerHTML={this.createMarkup()} />
       </div>;
     } else {
@@ -33,7 +33,7 @@ class ArticleShow extends React.Component {
     }
 
     return (
-      <div className="article-show">
+      <div>
         { component }
       </div>
     );
