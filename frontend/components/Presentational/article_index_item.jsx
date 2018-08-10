@@ -7,12 +7,19 @@ class ArticleIndexItem extends React.Component {
 
     this.handleDeleteArticle = this.handleDeleteArticle.bind(this);
     this.createMarkup = this.createMarkup.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleDeleteArticle(e) {
     e.preventDefault();
     const { article, showDeleteArticleModal } = this.props;
     showDeleteArticleModal(article.id);
+  }
+
+  handleEdit(e) {
+    e.preventDefault();
+    const { article, history } = this.props;
+    history.push(`/edit-article/${article.id}`);
   }
 
   createMarkup() {
@@ -34,7 +41,11 @@ class ArticleIndexItem extends React.Component {
           <br />
           <Link to={`/articles/${article.id}`}><img src={article.imageURL} /></Link>
           <div dangerouslySetInnerHTML={this.createMarkup()} />
-          <span className="delete-article" onClick={this.handleDeleteArticle}>×</span>
+          <div className="danger-buttons">
+            <button className="delete-article" onClick={this.handleDeleteArticle}>×</button>
+            <button className="edit-article" onClick={this.handleEdit}>Edit</button>
+
+          </div>
         </div>
       </div>
     );

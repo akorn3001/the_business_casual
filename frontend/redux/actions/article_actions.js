@@ -72,13 +72,13 @@ export const requestAllCategorizedArticles = (categoy_id) => {
   });
 };
 
-export const requestUpdateArticle = (article) => (dispatch) => (
-  ArticleAPIUtil.updateArticle(article)
+export const requestUpdateArticle = (article, article_id) => (dispatch) => {
+  return ArticleAPIUtil.updateArticle(article, article_id)
   .then(updatedArticle => {
     dispatch(receiveSingleArticle(updatedArticle));
     return updatedArticle;
-  }).fail(err => dispatch(receiveErrors(err.responseJSON)))
-);
+  }).fail(err => dispatch(receiveErrors(err.responseJSON)));
+};
 
 export const requestCreateArticle = (article) => (dispatch) => (
   ArticleAPIUtil.createArticle(article)

@@ -11,6 +11,16 @@ export const showDeleteCategoryModal = (category_id) => {
   };
 };
 
+export const showUpdateArticleModal = (article_id) => {
+  return {
+    type: SHOW_MODAL,
+    modalType: 'UPDATE_ARTICLE',
+    modalProps: {
+      articleID: article_id
+    }
+  };
+};
+
 export const showDeleteArticleModal = (article_id) => {
   return {
     type: SHOW_MODAL,

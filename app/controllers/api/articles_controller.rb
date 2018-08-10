@@ -21,15 +21,16 @@ class Api::ArticlesController < ApplicationController
     find_article
 
     if @article.update_attributes(article_params)
-      redirect_to article_url(@article)
+      # redirect_to article_url(@article)
+      render 'api/articles/show'
     else
-      render 'api/articles/edit'
+      render json: @article.errors.full_messages, status: 422
     end
   end
 
   def create
     @article = Article.new(article_params)
-    
+
     if @article.save
       render 'api/articles/show'
     else

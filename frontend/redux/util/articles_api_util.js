@@ -33,11 +33,13 @@ export const createArticle = (articleFormDataObject) => {
 };
 
 // EDIT ARTICLE
-export const updateArticle = (article) => {
+export const updateArticle = (articleFormDataObject, article_id) => {
   return $.ajax({
     method: 'PATCH',
-    url: `/api/articles/${article.id}`,
-    data: { article }
+    url: `/api/articles/${article_id}`,
+    data: articleFormDataObject,
+    contentType: false,
+    processData: false
   });
 };
 

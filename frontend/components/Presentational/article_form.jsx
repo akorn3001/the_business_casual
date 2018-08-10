@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import ReactQuill from 'react-quill';
 import DOMPurify from 'dompurify';
 

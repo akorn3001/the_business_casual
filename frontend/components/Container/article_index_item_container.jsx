@@ -14,7 +14,6 @@ const mapDispatchToProps = dispatch => {
   return  {
     requestDeleteArticle: (article_id) => dispatch(requestDeleteArticle(article_id)),
     showDeleteArticleModal: (article_id) => dispatch(showDeleteArticleModal(article_id))
-
   };
 };
 
