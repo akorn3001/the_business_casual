@@ -65,7 +65,7 @@ export const requestSingleArticle = (article_id) => (dispatch) => {
   });
 };
 
-export const requestAllCategorizedArticles = (categoy_id) => {
+export const requestAllCategorizedArticles = (category_id) => (dispatch) => {
   return ArticleAPIUtil.fetchCategorizedArticles(category_id)
   .then(categorizedArticles => {
     dispatch(receiveAllArticles(categorizedArticles));

@@ -6,23 +6,11 @@ class ArticleEdit extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {title: "", body: "", imageFile: ""};
-    this.props.requestSingleArticle(this.props.match.params.articleID)
-    .then(() => {
-      this.setState({title: this.props.article.title, body: this.props.article.body, imageFile: this.props.article.imageFile});
-    });
-    //
-
-
-    // .then(() => {
-    //   if (article) {
-    //     this.setState({
-    //       title: article.title,
-    //       body: article.body,
-    //       imageFile: article.imageFile
-    //     });
-    //   }
-    // });
+    this.state = {
+      title: "",
+      body: "",
+      imageFile: null
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handlePublish = this.handlePublish.bind(this);
@@ -31,19 +19,34 @@ class ArticleEdit extends React.Component {
     this.handleCancel = this.handleCancel.bind(this);
   }
 
-  // componentDidMount() {
-  //   const { article, requestSingleArticle } = this.props;
-  //
-  //   requestSingleArticle(this.props.match.params.articleID)
-  //   .then(() => {
-  //     if (article) {
-  //       this.setState({
-  //         title: article.title,
-  //         body: article.body,
-  //         imageFile: article.imageFile
-  //       });
-  //     }
-  //   });
+  componentDidMount() {
+    this.props.requestSingleArticle(this.props.match.params.articleID);
+    if (this.props.article) {
+      this.setState({
+        title: this.props.article.title,
+        body: this.props.article.body,
+        imageFile: this.props.article.imageFile
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.article && this.props.article) {
+      this.setState({
+        title: this.props.article.title,
+        body: this.props.article.body,
+        imageFile: this.props.article.imageFile
+      });
+    }
+  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.article) {
+  //     this.setState({
+  //       title: nextProps.article.title,
+  //       body: nextProps.article.body,
+  //       imageFile: nextProps.article.imageFile
+  //     });
+  //   }
   // }
 
   handleQuill(value) {
@@ -119,7 +122,7 @@ class ArticleEdit extends React.Component {
           <input name="file-input" id="file-input" type="file" accept="image/*" onChange={this.handleFile}/>
           <label className="file-input-label form-submit" htmlFor="file-input">Upload an Image!</label>
           <button className="article-form-button form-submit" onClick={this.handleCancel}>Cancel Changes</button>
-          <button className="article-form-button form-submit" onClick={this.handlePublish}>Publish Article!</button>
+          <button className="article-form-button form-submit" onClick={this.handlePublish}>Save Changes!</button>
         </div>
         {fileName}
 
@@ -128,7 +131,7 @@ class ArticleEdit extends React.Component {
 
     return (
       <div>
-        {this.state && this.state.title && component }
+        { component }
       </div>
     );
   }

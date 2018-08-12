@@ -32,14 +32,15 @@ class ArticleIndexItem extends React.Component {
   }
 
   render() {
-    const { article } = this.props;
+    const { article, imageDisplay } = this.props;
+    const image = (imageDisplay === false ? null : <img src={article.imageURL} />);
 
     return (
       <div className="article-index-item-container">
         <div className="article-index-item">
           <h2><Link to={`/articles/${article.id}`}>{ article.title }</Link></h2>
           <br />
-          <Link to={`/articles/${article.id}`}><img src={article.imageURL} /></Link>
+          <Link to={`/articles/${article.id}`}>{image}</Link>
           <div dangerouslySetInnerHTML={this.createMarkup()} />
           <div className="danger-buttons">
             <button className="delete-article" onClick={this.handleDeleteArticle}>×</button>

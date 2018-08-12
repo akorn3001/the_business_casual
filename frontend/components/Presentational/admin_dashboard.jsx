@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CategoryIndexContainer from '../Container/category_index_container';
 import ArticleIndexContainer from '../Container/article_index_container';
 import ArticleFormContainer from '../Container/article_form_container';
+import AdminSidebarContainer from '../Container/admin_sidebar_container';
 
 class AdminDashboard extends React.Component {
   constructor(props) {
@@ -17,18 +18,39 @@ render() {
     //   </div>
     //
     //   <div className="admin-dash-published-articles">
-    //     <ArticleIndexContainer published={true} />
+    //     <ArticleIndexContainer imageDisplay={false} published={true} />
     //   </div>
     //
     //   <div className="admin-dash-unpublished-articles">
-    //     <ArticleIndexContainer published={false} />
+    //     <ArticleIndexContainer imageDisplay={false} published={false} />
     //   </div>
     // </div>
-    <div className="admin-dash">
-      <div className="admin-dash-left-panel">
-        CONTENT COMING...
+    // <div className="admin-dash">
+    //   <div className="admin-dash-sidebar">
+    //     <AdminSidebarContainer />
+    //   </div>
+    //
+    //   <div className="admin-dash-form">
+    //     <ArticleFormContainer />
+    //   </div>
+    // </div>
+    <div className="admin-dash-wrapper">
+      <div className="admin-dash">
+        <div id="admin-dash-left" className="admin-dash-column">
+          <div className="admin-dash-bottom">
+            <AdminSidebarContainer />
+          </div>
+        </div>
+
+        <div id="admin-dash-right" className="admin-dash-column">
+          <div className="admin-dash-bottom">
+            <ArticleFormContainer />
+          </div>
+        </div>
       </div>
     </div>
+
+
   );
 }
 

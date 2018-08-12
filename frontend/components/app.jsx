@@ -10,6 +10,7 @@ import SessionFormContainer from './Container/session_form_container';
 import AdminDashboardContainer from './Container/admin_dashboard_container';
 import HomePageContainer from './Container/home_page_container';
 import ArticleEditContainer from './Container/article_edit_container';
+import CategorizedArticleIndexContainer from './Container/categorized_article_index_container';
 // import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => {
@@ -17,16 +18,16 @@ const App = () => {
     <div>
       <HeaderContainer />
       <ModalRoot />
+      <AdminDashboardContainer />
 
       <Switch>
+        <Route path={"/categories/:categoryID/articles"} exact component={CategorizedArticleIndexContainer} />
         <Route path="/articles" exact component={HomePageContainer} />
         <Route path={`/articles/:articleID`} exact component={ArticleShowContainer} />
         <Route path={`/edit-article/:articleID`} exact component={ArticleEditContainer} />
         <Route path="/login" component={SessionFormContainer} />
         <Route path="/signup" component={SessionFormContainer} />
-    </Switch>
-
-    <ArticleFormContainer />
+      </Switch>
     </div>
   );
 };

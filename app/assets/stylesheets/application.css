@@ -27,11 +27,13 @@
 @import 'article_index.css';
 @import 'article_show.css';
 
-
-
+html {
+  height: 100%;
+}
 
 body {
-  background-color: ##F5F5F5;
+  height: 100%;
+  background-color: #E9EBEE;
 }
 
 .modal-open {

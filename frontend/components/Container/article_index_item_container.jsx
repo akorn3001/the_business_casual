@@ -4,7 +4,7 @@ import { requestDeleteArticle } from '../../redux/actions/article_actions';
 import { showDeleteArticleModal } from '../../redux/actions/modal_actions';
 import ArticleIndexItem from '../Presentational/article_index_item';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     // currentUser: state.session.currentUser
   };

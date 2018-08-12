@@ -6,12 +6,12 @@ export const fetchAllArticles = () => (
   })
 );
 
-export const fetchCategorizedArticles = (category_id) => (
-  $.ajax({
+export const fetchCategorizedArticles = (category_id) => {
+  return $.ajax({
     method: 'GET',
     url: `/api/categories/${category_id}/articles`
-  })
-);
+  });
+};
 
 // FETCH SINGLE ARTICLE
 export const fetchSingleArticle = (article_id) => (

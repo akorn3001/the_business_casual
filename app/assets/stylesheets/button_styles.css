@@ -29,3 +29,20 @@
 .file-input-label:hover {
   background-color: #2629bf;
 }
+
+.delete-article {
+  border-radius: 50%;
+  color: red;
+  font-size: 20px;
+  transition: 0.25s;
+}
+
+.delete-article:hover {
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+
+.edit-article {
+  cursor: pointer;
+}

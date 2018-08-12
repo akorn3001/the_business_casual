@@ -1,13 +1,73 @@
-.admin-dash {
-  display: flex;
-  flex-direction: row;
+.admin-dash-wrapper {
+  position: relative;
   height: 100%;
 }
 
-.admin-dash-left-panel {
-
-  width: 33%;
+.admin-dash {
   height: 100%;
-  background-color: #444444;
+  overflow: hidden;  /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
+  margin: 0px;  /*removes default style*/
+  display: flex;  /*enables flex content for its children*/
+  box-sizing: border-box;
+}
+
+/* .admin-dash-published-articles,
+.admin-dash-unpublished-articles,
+.admin-dash-category-index {
+  width: 25%;
+  height: 500px;
+  overflow-y: auto;
+  border: 1px solid gray;
+  padding: 5px;
+} */
+
+/* .admin-dash-article-form {
+  margin: auto;
+} */
+
+#admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  min-width: 340px;
+  width: 340px;
+  top: 115px;
+  background-color: #4d394b;
+  overflow-y: scroll;
+  min-height: 100vh;
+  height: 100%;
   color: white;
+}
+
+#admin-sidebar > * {
+  margin-left: 5px;
+}
+
+.admin-dash-column {
+  min-height: 100%;  /*allows both columns to span the full height of the browser window*/
+  display: flex;
+  flex-direction: column;  /*places the left and right headers above the bottom content*/
+}
+
+#admin-dash-left {
+  min-height: 100%;
+  flex-shrink: 0;  /*makes sure that content is not cut off in a smaller browser window*/
+}
+
+#admin-dash-right {
+  width: 50%;
+  margin: auto;
+}
+
+.admin-dash-bottom {
+  flex-grow: 1;  /*ensures that the container will take up the full height of the parent container*/
+  /* overflow-y: auto;  /*adds scroll to this container*/ */
+}
+
+.admin-dash-bottom #article-form .quill-element {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+#admin-dash-right .admin-dash-bottom {
+  max-height: 100vh;
 }

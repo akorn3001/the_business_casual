@@ -26,7 +26,7 @@ class Header extends React.Component {
     const signOutButton = <button className="auth-link" onClick={this.handleLogout}>Sign Out</button>;
 
     // CATEGORY LINKS
-    const category1Link = <Link to="/category1">Category-1</Link>;
+    const category1Link = <Link to="/categories/1/articles">Category-1</Link>;
     const category2Link = <Link to="/category2">Category-2</Link>;
     const category3Link = <Link to="/category3">Category-3</Link>;
     const category4Link = <Link to="/category4">Category-4</Link>;
