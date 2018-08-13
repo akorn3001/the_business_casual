@@ -8,6 +8,7 @@ class CategorizedArticleIndex extends React.Component {
 
   componentDidMount() {
     const { categoryID } = this.props.match.params;
+    // this.props.clearArticleState();
     this.props.requestAllCategorizedArticles(categoryID);
   }
 

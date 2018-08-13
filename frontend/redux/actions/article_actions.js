@@ -3,11 +3,18 @@ import * as ArticleAPIUtil from '../util/articles_api_util';
 export const RECEIVE_ALL_ARTICLES = 'RECEIVE_ALL_ARTICLES';
 export const RECEIVE_SINGLE_ARTICLE = 'RECEIVE_SINGLE_ARTICLE';
 export const DELETE_SINGLE_ARTICLE = 'DELETE_SINGLE_ARTICLE';
+export const CLEAR_ARTICLE_STATE = 'CLEAR_ARTICLE_STATE';
 // export const CREATE_ARTICLE = 'CREATE_ARTICLE';
 // export const UPDATE_ARTICLE = 'UPDATE_ARTICLE';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 // Actions dispatched by the store to the reducer
+export const clearArticleState = () => {
+    return {
+      type: CLEAR_ARTICLE_STATE
+    };
+};
+
 export const receiveAllArticles = (articles) => {
   return {
     type: RECEIVE_ALL_ARTICLES,

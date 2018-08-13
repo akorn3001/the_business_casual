@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import {
+  CLEAR_ARTICLE_STATE,
   RECEIVE_ALL_ARTICLES,
   RECEIVE_SINGLE_ARTICLE,
   DELETE_SINGLE_ARTICLE
@@ -12,6 +13,9 @@ const articlesReducer = (state = {}, action) => {
 
   Object.freeze(state);
   switch(action.type) {
+    case CLEAR_ARTICLE_STATE:
+      newState = {};
+      return newState;
     case RECEIVE_ALL_ARTICLES:
       newState = Object.assign({}, state, action.articles);
       return newState;
