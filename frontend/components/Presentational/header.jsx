@@ -21,7 +21,7 @@ class Header extends React.Component {
     // TOP LEVEL NAVIGATION LINKS
     const aboutLink = <Link to="/about">About</Link>;
     const signUpLink = <Link to="/signup" className="auth-link">Sign Up</Link>;
-    const dashboardLink = <Link to="/adminDash">Admin Dashboard</Link>;
+    const dashboardLink = <Link to="/profile">Admin Dashboard</Link>;
     const signInLink = <Link to="/login" className="auth-link">Sign In</Link>;
     const signOutButton = <button className="auth-link" onClick={this.handleLogout}>Sign Out</button>;
 

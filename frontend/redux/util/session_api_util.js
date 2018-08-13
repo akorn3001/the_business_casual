@@ -1,5 +1,4 @@
 export const login = (user) => {
-  debugger
   return $.ajax({
     method: 'POST',
     url: '/users/sign_in',
