@@ -43,7 +43,6 @@ render() {
         </div>
 
         <div id="admin-dash-right" className="admin-dash-column">
-          <h1 className="welcome-banner">Welcome, {this.props.currentUser.username}!</h1>
           <div className="admin-dash-bottom">
             <ArticleFormContainer />
           </div>

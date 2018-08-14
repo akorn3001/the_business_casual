@@ -1,0 +1,12 @@
+.unpublished-articles-index .article-index {
+  max-width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-gap: 10px;
+}
+
+.unpublished-articles-index .article-index .article-index-item-wrapper {
+
+
+}

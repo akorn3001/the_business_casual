@@ -47,6 +47,8 @@
 
 .sidebar-content {
   margin-top: 15px;
+  font-family: Oswald;
+  letter-spacing: 1px;
 }
 
 .sidebar-content span {

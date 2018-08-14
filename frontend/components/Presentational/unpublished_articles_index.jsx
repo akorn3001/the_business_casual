@@ -13,7 +13,7 @@ class UnpublishedArticlesIndex extends React.Component {
   render() {
     return (
       <div>
-        <div className="upublished-articles">
+        <div className="unpublished-articles-index">
           <ArticleIndexContainer published={false} />
         </div>
       </div>

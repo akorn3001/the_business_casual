@@ -39,14 +39,14 @@ class ArticleIndexItem extends React.Component {
     if (currentUser && currentUser.admin) {
       dangerButtons =
       <div className="danger-buttons">
-        <button className="delete-article" onClick={this.handleDeleteArticle}>×</button>
+        <button className="delete-article" onClick={this.handleDeleteArticle}>Delete</button>
         <button className="edit-article" onClick={this.handleEdit}>Edit</button>
       </div>;
     } else dangerButtons = null;
 
 
     return (
-      <div className="article-index-item-container">
+      <div className="article-index-item-wrapper">
         <div className="article-index-item">
           <h2><Link to={`/articles/${article.id}`}>{ article.title }</Link></h2>
           <br />

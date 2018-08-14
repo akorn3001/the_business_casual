@@ -31,10 +31,9 @@
 }
 
 .delete-article {
-  border-radius: 50%;
   color: red;
-  font-size: 20px;
   transition: 0.25s;
+  font-weight: bold;
 }
 
 .delete-article:hover {
@@ -44,5 +43,13 @@
 }
 
 .edit-article {
+  color: #f4c542;
+  transition: 0.25s;
+  font-weight: bold;
+}
+
+.edit-article:hover {
+  color: black;
+  background-color: #f4c542;
   cursor: pointer;
 }
