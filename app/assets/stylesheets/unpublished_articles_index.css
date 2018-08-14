@@ -1,12 +1,26 @@
+
 .unpublished-articles-index .article-index {
-  max-width: 90%;
-  margin: auto;
+  max-width: 960px;
+  margin: 0 auto 30px;
   display: grid;
-  grid-template-columns: 300px 300px 300px 300px;
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
 }
 
-.unpublished-articles-index .article-index .article-index-item-wrapper {
+.unpublished-articles-index > * > .article-index-item-wrapper {
+  position: relative;
+}
 
+.unpublished-articles-index .article-index .article-index-item-wrapper .article-index-item a img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
 
+.unpublished-articles-index > * > h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
 }

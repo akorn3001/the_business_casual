@@ -34,8 +34,8 @@
   padding-right: 5px;
 }
 
-.article-index-item a {
-  color: black;
+.article-index-item p a {
+  color: #4286f4;
 }
 
 .article-index-item a:hover {
