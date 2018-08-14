@@ -32,8 +32,18 @@ class ArticleIndexItem extends React.Component {
   }
 
   render() {
-    const { article, imageDisplay } = this.props;
+    let dangerButtons;
+    const { article, imageDisplay, currentUser } = this.props;
     const image = (imageDisplay === false ? null : <img src={article.imageURL} />);
+
+    if (currentUser && currentUser.admin) {
+      dangerButtons =
+      <div className="danger-buttons">
+        <button className="delete-article" onClick={this.handleDeleteArticle}>×</button>
+        <button className="edit-article" onClick={this.handleEdit}>Edit</button>
+      </div>;
+    } else dangerButtons = null;
+
 
     return (
       <div className="article-index-item-container">
@@ -42,11 +52,7 @@ class ArticleIndexItem extends React.Component {
           <br />
           <Link to={`/articles/${article.id}`}>{image}</Link>
           <div dangerouslySetInnerHTML={this.createMarkup()} />
-          <div className="danger-buttons">
-            <button className="delete-article" onClick={this.handleDeleteArticle}>×</button>
-            <button className="edit-article" onClick={this.handleEdit}>Edit</button>
-
-          </div>
+          { dangerButtons }
         </div>
       </div>
     );

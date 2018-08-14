@@ -6,7 +6,7 @@ import ArticleIndexItem from '../Presentational/article_index_item';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    // currentUser: state.session.currentUser
+    currentUser: state.session.currentUser
   };
 };
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-export default withRouter(connect(null, mapDispatchToProps)(ArticleIndexItem));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ArticleIndexItem));
