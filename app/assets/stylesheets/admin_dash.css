@@ -11,6 +11,8 @@
   box-sizing: border-box;
 }
 
+
+
 /* .admin-dash-published-articles,
 .admin-dash-unpublished-articles,
 .admin-dash-category-index {
@@ -28,6 +30,7 @@
 #admin-sidebar {
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-width: 340px;
   width: 340px;
   top: 115px;
@@ -38,8 +41,19 @@
   color: white;
 }
 
-#admin-sidebar > * {
+/* #admin-sidebar > * {
   margin-left: 5px;
+} */
+
+.sidebar-content {
+  margin-top: 15px;
+}
+
+.sidebar-content span {
+  color: white;
+  border: 1px solid white;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .admin-dash-column {
@@ -70,4 +84,21 @@
 
 #admin-dash-right .admin-dash-bottom {
   max-height: 100vh;
+}
+
+.welcome-banner {
+  text-align: center;
+}
+
+/* .admin-sidebar-current-user {
+
+} */
+
+#active-user-green-circle {
+  display: inline-block;
+  margin-right: 2px;
+  height: 10px;
+  width: 10px;
+  background-color: #2dbf30;
+  border-radius: 50%;
 }

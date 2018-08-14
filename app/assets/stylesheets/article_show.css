@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   width: 66%;
-  margin: auto;
+  margin: 15px auto 15px auto;
   background-color: white;
   -webkit-box-shadow: 0px 0px 2px 2px #ccc;
 }
@@ -15,6 +15,14 @@
 
 .article-show-body {
   font-size: 20px;
+}
+
+.article-show-body a {
+  color: black;
+}
+
+.article-show-body a:hover {
+  color: #3f3f3f;
 }
 
 .article-show h1 {

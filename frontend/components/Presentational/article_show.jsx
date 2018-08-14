@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ArticleIndexItemContainer from '../Container/article_index_item_container';
 
 class ArticleShow extends React.Component {
@@ -19,7 +20,10 @@ class ArticleShow extends React.Component {
   }
 
   render() {
+    // let lastArticle = <Link to={`/articles/${Number(this.props.match.params.articleID) - 1}`}>Previous Article</Link>;
+    // let nextArticle = <Link to={`/articles/${Number(this.props.match.params.articleID) + 1}`}>Next Article</Link>;
     let component;
+
     if (this.props.article) {
       const { article } = this.props;
       component =

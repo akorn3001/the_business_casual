@@ -86,10 +86,17 @@ class ArticleEdit extends React.Component {
   }
 
   render() {
-
+    let imagePreview;
     let fileName;
     let component;
 
+    if (this.state.imageFile) {
+      fileName = <span id="image-upload-message">{this.state.imageFile.name} successfully attached</span>;
+      imagePreview = <img style={{width: "100px", height: "auto"}} src={this.props.article.imageURL} />;
+    } else {
+      fileName = null;
+      imagePreview = null;
+    }
     fileName =
     (this.state.imageFile ?
       <span id="image-upload-message">{this.state.imageFile.name} successfully attached</span>
@@ -125,7 +132,7 @@ class ArticleEdit extends React.Component {
           <button className="article-form-button form-submit" onClick={this.handlePublish}>Save Changes!</button>
         </div>
         {fileName}
-
+        {imagePreview}
       </form>
     </div>;
 

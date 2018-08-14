@@ -26,6 +26,7 @@
 @import 'article_form.css';
 @import 'article_index.css';
 @import 'article_show.css';
+@import 'searchbar.css';
 
 html {
   height: 100%;

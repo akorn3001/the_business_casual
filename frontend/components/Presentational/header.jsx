@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchbarContainer from '../Container/searchbar_container';
 
 class Header extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class Header extends React.Component {
     let navigation;
 
     // TOP LEVEL NAVIGATION LINKS
-    const aboutLink = <Link to="/about">About</Link>;
+    const searchBar = <SearchbarContainer />;
     const signUpLink = <Link to="/signup" className="auth-link">Sign Up</Link>;
     const dashboardLink = <Link to="/profile">Admin Dashboard</Link>;
     const signInLink = <Link to="/login" className="auth-link">Sign In</Link>;
@@ -37,7 +38,7 @@ class Header extends React.Component {
       if (currentUser.admin) {
         navigation =
           <ul className="header-items">
-            <li className="header-link">{aboutLink}</li>
+            <li className="header-search">{searchBar}</li>
             <li className="header-category">{category1Link}</li>
             <li className="header-category">{category2Link}</li>
             <li className="header-category">{category3Link}</li>
@@ -48,7 +49,7 @@ class Header extends React.Component {
         } else {
           navigation =
           <ul className="header-items">
-            <li className="header-link">{aboutLink}</li>
+            <li className="header-search">{searchBar}</li>
             <li className="header-category">{category1Link}</li>
             <li className="header-category">{category2Link}</li>
             <li className="header-category">{category3Link}</li>
@@ -59,7 +60,7 @@ class Header extends React.Component {
       } else {
         navigation =
         <ul className="header-items">
-          <li className="header-link">{aboutLink}</li>
+          <li className="header-search">{searchBar}</li>
           <li className="header-category">{category1Link}</li>
           <li className="header-category">{category2Link}</li>
           <li className="header-category">{category3Link}</li>

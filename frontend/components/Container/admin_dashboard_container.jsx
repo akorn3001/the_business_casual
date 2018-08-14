@@ -5,6 +5,7 @@ import AdminDashboard from '../Presentational/admin_dashboard';
 
 const mapStateToProps = (state) => {
   return {
+    currentUser: state.session.currentUser,
     unpublishedArticles: selectAllArticles(state).filter((article) => !article.published),
     publishedArticles: selectAllArticles(state).filter((article) => article.published)
   };

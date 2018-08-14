@@ -76,6 +76,7 @@ class ArticleForm extends React.Component {
 
     return (
       <div id="article-form">
+        <h2>Create New Article</h2>
         <form>
           <div className="article-form-title">
             <label htmlFor="title">Title: </label>

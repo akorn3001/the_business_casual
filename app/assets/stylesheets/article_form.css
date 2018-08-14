@@ -30,3 +30,7 @@
 #image-upload-message {
   position: relative;
 }
+
+#article-form h2 {
+  text-align: center;
+}

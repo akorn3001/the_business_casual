@@ -12,6 +12,10 @@ import HomePageContainer from './Container/home_page_container';
 import ArticleEditContainer from './Container/article_edit_container';
 import CategorizedArticleIndexContainer from './Container/categorized_article_index_container';
 import { AuthRoute, AdminRoute } from '../redux/util/route_util';
+import Searchbar from './Presentational/searchbar';
+import UnpublishedArticlesIndexContainer from './Container/unpublished_articles_index_container';
+
+
 
 const App = () => {
   return (
@@ -29,6 +33,7 @@ const App = () => {
       <AuthRoute path="/login" exact component={SessionFormContainer} />
       <AuthRoute path="/signup" exact component={SessionFormContainer} />
       <AdminRoute path="/profile" component={AdminDashboardContainer} />
+      <AdminRoute path="/unpublished" component={UnpublishedArticlesIndexContainer} />
     </div>
   );
 };
