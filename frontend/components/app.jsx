@@ -27,13 +27,14 @@ const App = () => {
         <Route path={"/categories/:categoryID/articles"} exact component={CategorizedArticleIndexContainer} />
         <Route path="/articles" exact component={HomePageContainer} />
         <Route path={`/articles/:articleID`} exact component={ArticleShowContainer} />
+        <Route path={`edit-article/:articleID`} exact component={ArticleEditContainer} />
       </Switch>
 
       <AuthRoute path="/login" exact component={SessionFormContainer} />
       <AuthRoute path="/signup" exact component={SessionFormContainer} />
       <AdminRoute path="/profile" component={AdminDashboardContainer} />
       <AdminRoute path="/unpublished" component={UnpublishedArticlesIndexContainer} />
-      <AdminRoute path={`edit-article/:articleID`} exact component={ArticleEditContainer} />
+
 
     </div>
   );

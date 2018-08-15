@@ -5,7 +5,6 @@ import { selectAllArticles } from '../../redux/reducers/selectors';
 import ArticleEdit from '../Presentational/article_edit';
 
 const mapStateToProps = (state, ownProps) => {
-
   return {
     article: state.entities.articles[ownProps.match.params.articleID]
   };
