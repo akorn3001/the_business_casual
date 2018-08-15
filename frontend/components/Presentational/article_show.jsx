@@ -20,8 +20,6 @@ class ArticleShow extends React.Component {
   }
 
   render() {
-    // let lastArticle = <Link to={`/articles/${Number(this.props.match.params.articleID) - 1}`}>Previous Article</Link>;
-    // let nextArticle = <Link to={`/articles/${Number(this.props.match.params.articleID) + 1}`}>Next Article</Link>;
     let component;
 
     if (this.props.article) {
