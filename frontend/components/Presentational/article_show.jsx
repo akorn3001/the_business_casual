@@ -7,6 +7,7 @@ class ArticleShow extends React.Component {
     super(props);
 
     this.createMarkup = this.createMarkup.bind(this);
+    this.titleToURLString = this.titleToURLString.bind(this);
   }
 
   componentDidMount() {
@@ -17,6 +18,12 @@ class ArticleShow extends React.Component {
   createMarkup() {
     const { body } = this.props.article;
     return {__html: body};
+  }
+
+  titleToURLString() {
+    const { title } = this.props.article;
+    let string = title;
+    string = string.replace(/\s+/g, '-').toLowerCase();
   }
 
   render() {

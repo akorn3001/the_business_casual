@@ -1,11 +1,9 @@
 #article-form {
   width: 600px;
-  margin-bottom: 300px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   top: 50px;
-
 }
 
 .quill-element {

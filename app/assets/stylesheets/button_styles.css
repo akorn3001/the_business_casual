@@ -53,3 +53,15 @@
   background-color: #f4c542;
   cursor: pointer;
 }
+
+.publish-article {
+  color: #31ba2a;
+  transition: 0.25s;
+  font-weight: bold;
+}
+
+.publish-article:hover {
+  color: white;
+  background-color: #31ba2a;
+  cursor: pointer;
+}

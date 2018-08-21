@@ -1,31 +1,14 @@
 .admin-dash-wrapper {
   position: relative;
-  height: 100%;
+  /* margin-top: 115px; */
 }
 
 .admin-dash {
-  height: 100%;
   overflow: hidden;  /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
-  margin: 0px;  /*removes default style*/
+  margin: 0;  /*removes default style*/
   display: flex;  /*enables flex content for its children*/
   box-sizing: border-box;
 }
-
-
-
-/* .admin-dash-published-articles,
-.admin-dash-unpublished-articles,
-.admin-dash-category-index {
-  width: 25%;
-  height: 500px;
-  overflow-y: auto;
-  border: 1px solid gray;
-  padding: 5px;
-} */
-
-/* .admin-dash-article-form {
-  margin: auto;
-} */
 
 #admin-sidebar {
   display: flex;
@@ -40,10 +23,6 @@
   height: 100%;
   color: white;
 }
-
-/* #admin-sidebar > * {
-  margin-left: 5px;
-} */
 
 .sidebar-content {
   margin-top: 15px;
@@ -84,17 +63,17 @@
   overflow-y: scroll;
 }
 
+.admin-dash-bottom #article-form {
+  margin-top: -300px;
+}
+
 #admin-dash-right .admin-dash-bottom {
-  max-height: 100vh;
+
 }
 
 .welcome-banner {
   text-align: center;
 }
-
-/* .admin-sidebar-current-user {
-
-} */
 
 #active-user-green-circle {
   display: inline-block;

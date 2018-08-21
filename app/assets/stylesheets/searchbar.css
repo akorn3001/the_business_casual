@@ -34,6 +34,6 @@
   transition: ease-in-out, height .25s ease-in-out;
 }
 
-.search-input:focus {
+.search-input:focus, {
   height: 35px;
 }

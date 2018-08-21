@@ -27,7 +27,7 @@ const App = () => {
       <Switch>
         <Route path={`/categories/:categoryID/articles`} exact component={CategorizedArticleIndexContainer} />
         <Route path="/articles" exact component={HomePageContainer} />
-        <Route path="/articles/:articleID" exact component={ArticleShowContainer} />
+        <Route path="/articles/:articleID/" exact component={ArticleShowContainer} />
       </Switch>
 
       <AuthRoute path="/login" exact component={SessionFormContainer} />

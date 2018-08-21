@@ -8,12 +8,18 @@ class ArticleIndexItem extends React.Component {
     this.handleDeleteArticle = this.handleDeleteArticle.bind(this);
     this.createMarkup = this.createMarkup.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handlePublish = this.handlePublish.bind(this);
   }
 
   handleDeleteArticle(e) {
     e.preventDefault();
     const { article, showDeleteArticleModal } = this.props;
     showDeleteArticleModal(article.id);
+  }
+
+  handlePublish(e) {
+    e.preventDefault();
+    this.props.article.published = true;
   }
 
   handleEdit(e) {
@@ -33,14 +39,24 @@ class ArticleIndexItem extends React.Component {
 
   render() {
     let dangerButtons;
+    let publishButton;
+
     const { article, imageDisplay, currentUser } = this.props;
     const image = (imageDisplay === false ? null : <img src={article.imageURL} />);
+
+    if (!article.published) {
+      publishButton =
+      <button className="publish-article" onClick={this.handlePublish}>Publish</button>;
+    } else {
+      publishButton = null;
+    }
 
     if (currentUser && currentUser.admin) {
       dangerButtons =
       <div className="danger-buttons">
         <button className="delete-article" onClick={this.handleDeleteArticle}>Delete</button>
         <button className="edit-article" onClick={this.handleEdit}>Edit</button>
+        { publishButton }
       </div>;
     } else dangerButtons = null;
 

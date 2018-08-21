@@ -14,6 +14,7 @@ class UnpublishedArticlesIndex extends React.Component {
     return (
       <div>
         <div className="unpublished-articles-index">
+          <h1>Unpublished Articles</h1>
           <ArticleIndexContainer published={false} />
         </div>
       </div>
