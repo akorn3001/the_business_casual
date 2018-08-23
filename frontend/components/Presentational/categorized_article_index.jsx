@@ -8,20 +8,28 @@ class CategorizedArticleIndex extends React.Component {
 
   componentDidMount() {
     const { categoryID } = this.props.match.params;
-    // this.props.clearArticleState();
+    this.props.clearArticleState();
     this.props.requestAllCategorizedArticles(categoryID);
   }
 
   render() {
+    let component;
 
-    return (
-      <div className="article-index">
-        { this.props.categorizedArticles.map(article => <ArticleIndexItemContainer
+    const { categorizedArticles } = this.props;
+
+    if (categorizedArticles) {
+      component =
+      <div className="article-index categorized-article-index">
+        { categorizedArticles.map(article => <ArticleIndexItemContainer
           key={article.id}
           article={article}
            />)
        }
-      </div>
+     </div>;
+    } else component = null;
+
+    return (
+      component
     );
   }
 }

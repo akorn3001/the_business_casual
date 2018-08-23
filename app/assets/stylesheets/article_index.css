@@ -42,3 +42,8 @@
   color: #3D3D3D;
   cursor: pointer;
 }
+
+.categorized-article-index {
+  width: 66%;
+  margin: auto;
+}

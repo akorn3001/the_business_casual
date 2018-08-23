@@ -20,24 +20,14 @@ class ArticleEdit extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestSingleArticle(this.props.match.params.articleID);
-    if (this.props.article) {
+    this.props.requestSingleArticle(this.props.match.params.articleID)
+    .then(article => {
       this.setState({
-        title: this.props.article.title,
-        body: this.props.article.body,
-        imageFile: this.props.article.imageFile
+        title: article.title,
+        body: article.body,
+        imageFile: article.imageFile
       });
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    if (!prevProps.article && this.props.article) {
-      this.setState({
-        title: this.props.article.title,
-        body: this.props.article.body,
-        imageFile: this.props.article.imageFile
-      });
-    }
+    });
   }
 
   handleQuill(value) {
@@ -77,7 +67,6 @@ class ArticleEdit extends React.Component {
   }
 
   render() {
-    debugger
     let fileName;
     let component;
 

@@ -5,17 +5,9 @@ import { selectAllArticles } from '../../redux/reducers/selectors';
 import CategorizedArticleIndex from '../Presentational/categorized_article_index';
 
 
-const mapStateToProps = (state, ownProps) => {
-  let categorizedArticles;
-
-  if (ownProps.published) {
-    categorizedArticles = selectAllArticles(state).filter((article) => article.published).reverse();
-  } else {
-    categorizedArticles = selectAllArticles(state).filter((article) => !article.published);
-  }
-
+const mapStateToProps = state => {
   return {
-    categorizedArticles
+    categorizedArticles: selectAllArticles(state).filter((article) => article.published).reverse()
   };
 };
 

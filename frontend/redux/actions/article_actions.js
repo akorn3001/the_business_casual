@@ -29,26 +29,12 @@ export const receiveSingleArticle = (article) => {
   };
 };
 
-// export const createSingleArticle = (article) => {
-//   return {
-//     type: CREATE_ARTICLE,
-//     article
-//   };
-// };
-
 export const deleteSingleArticle = (article_id) => {
   return {
     type: DELETE_SINGLE_ARTICLE,
     articleID: article_id
   };
 };
-
-// export const updateArticle = (article) => {
-//   return {
-//     type: UPDATE_ARTICLE,
-//     article
-//   };
-// };
 
 export const receiveErrors = (errors) => {
   return {
@@ -62,6 +48,7 @@ export const requestAllArticles = () => (dispatch) => {
   return ArticleAPIUtil.fetchAllArticles()
   .then(articles => {
     dispatch(receiveAllArticles(articles));
+    return articles;
   });
 };
 
@@ -69,6 +56,7 @@ export const requestSingleArticle = (article_id) => (dispatch) => {
   return ArticleAPIUtil.fetchSingleArticle(article_id)
   .then(article => {
     dispatch(receiveSingleArticle(article));
+    return article;
   });
 };
 
@@ -76,6 +64,7 @@ export const requestAllCategorizedArticles = (category_id) => (dispatch) => {
   return ArticleAPIUtil.fetchCategorizedArticles(category_id)
   .then(categorizedArticles => {
     dispatch(receiveAllArticles(categorizedArticles));
+    return categorizedArticles;
   });
 };
 
