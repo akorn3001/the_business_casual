@@ -6,11 +6,20 @@ class SessionForm extends React.Component {
 
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      usernameValidInput: "valid",
+      passwordValidInput: "valid"
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.deleteErrors = this.deleteErrors.bind(this);
+    this.renderUsernameErrors = this.renderUsernameErrors.bind(this);
+    this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.setState({ ["validInput"]: "valid" });
   }
 
   handleChange(field) {
@@ -23,7 +32,57 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
 
-    this.props.processForm(user);
+    this.props.processForm(user)
+    .fail(error => {
+      if (error.responseJSON.username) {
+        this.setState({ ["usernameValidInput"]: "invalid" });
+      } else {
+        this.setState({ ["usernameValidInput"]: "valid" });
+      }
+
+      if (error.responseJSON.password) {
+        this.setState({ ["passwordValidInput"]: "invalid" });
+      } else {
+        this.setState({ ["passwordValidInput"]: "valid" });
+      }
+    });
+  }
+
+  deleteErrors() {
+    this.setState({
+      ["username"]: "",
+      ["password"]: ""
+    });
+
+    this.props.deleteAllErrors();
+  }
+
+  renderUsernameErrors() {
+    let usernameErrors;
+
+    if (this.props.errors instanceof Array) {
+      return null;
+    } else if (this.props.errors.username) {
+      usernameErrors = this.props.errors.username.map((error, idx) => {
+        return <li key={`${idx}`}>{error}</li>;
+      });
+    }
+
+    return <ul>{usernameErrors}</ul>;
+  }
+
+  renderPasswordErrors() {
+    let usernameErrors;
+
+    if (this.props.errors instanceof Array) {
+      return null;
+    } else if (this.props.errors.password) {
+      passwordErrors = this.props.errors.password.map((error, idx) => {
+        return <li key={`${idx}`}>{error}</li>;
+      });
+    }
+
+    return <ul>{passwordErrors}</ul>;
   }
 
   render() {
@@ -43,6 +102,9 @@ class SessionForm extends React.Component {
               className="session-form-username-input"
               autoComplete="off"
               />
+            <div className="session-form-username-errors">
+              {this.renderUsernameErrors}
+            </div>
           </div>
 
           <div className="session-form-password">
@@ -53,6 +115,9 @@ class SessionForm extends React.Component {
               onChange={this.handleChange("password")}
               className="session-form-password-input"
               />
+            <div className="session-form-password-errors">
+                {this.renderPasswordErrors}
+              </div>
           </div>
 
           <input className="form-submit session-form-submit" type="submit" value={buttonText} />
