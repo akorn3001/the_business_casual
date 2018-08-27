@@ -19,12 +19,13 @@ class Users::SessionsController < Devise::SessionsController
 
       render 'api/users/show'
     else
-      if User.find_by(username: params[:user][:username]) == nil
-        errors[:username] = ['Invalid Username.']
-      end
-
-      errors[:password] = ['Invalid Password.']
-      render json: errors, status: 401
+      # if User.find_by(username: params[:user][:username]) == nil
+      #   errors[:username] = ['Invalid Username']
+      # end
+      #
+      # errors[:password] = ['Invalid Password']
+      # render json: errors, status: 401
+      render json: ["Invalid Credentials"], status: 422
     end
   end
  #  def create

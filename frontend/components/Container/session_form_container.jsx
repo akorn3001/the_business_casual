@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { signUp, login, deleteAllErrors } from '../../redux/actions/session_actions';
+import { signUp, login, clearErrors } from '../../redux/actions/session_actions';
 import { requestAllUsers } from '../../redux/actions/user_actions';
 import SessionForm from '../Presentational/session_form';
 
@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     processForm: user => processForm(user),
-    deleteAllErrors: () => dispatch(deleteAllErrors()),
+    clearErrors: () => dispatch(clearErrors()),
     login: user => dispatch(login(user)),
     requestAllUsers: () => dispatch(requestAllUsers())
   };

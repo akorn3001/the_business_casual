@@ -14,20 +14,21 @@
  *= require_self
  *= require toastr
  */
-@import 'fonts.css';
-@import 'header.css';
-@import 'home_page.css';
-@import 'button_styles.css';
-@import 'admin_dash.css';
-@import 'session_form.css';
-@import 'category_index.css';
-@import 'modal.css';
-@import 'quill.css';
-@import 'article_form.css';
-@import 'article_index.css';
-@import 'article_show.css';
-@import 'searchbar.css';
-@import 'unpublished_articles_index.css';
+@import url('fonts.css');
+@import url('errors.css');
+@import url('header.css');
+@import url('home_page.css');
+@import url('button_styles.css');
+@import url('admin_dash.css');
+@import url('session_form.css');
+@import url('category_index.css');
+@import url('modal.css');
+@import url('quill.css');
+@import url('article_form.css');
+@import url('article_index.css');
+@import url('article_show.css');
+@import url('searchbar.css');
+@import url('unpublished_articles_index.css');
 
 html {
   height: 100%;

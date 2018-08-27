@@ -36,12 +36,9 @@ export const resetState = () => {
 
 export const clearErrors = () => {
   return {
-    type: CLEAR_ERRORS
+    type: CLEAR_ERRORS,
+    errors: []
   };
-};
-
-export const deleteAllErrors = () => (dispatch) => {
-  return dispatch(clearErrors());
 };
 
 export const signUp = (user) => (dispatch) => {

@@ -1,0 +1,8 @@
+/* SESSION ERRORS */
+.session-form-error-banner ul li {
+  text-align: center;
+  background: #FF5008;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 3px;
+}

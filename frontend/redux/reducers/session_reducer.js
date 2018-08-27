@@ -1,5 +1,6 @@
 import {
   RECEIVE_CURRENT_USER,
+  CLEAR_ERRORS,
   LOG_OUT
 } from "../actions/session_actions";
 
@@ -20,6 +21,7 @@ const sessionReducer = (state = { currentUser: null }, action) => {
       } else {
         return state;
       }
+      break;
     case LOG_OUT:
       newState = {};
       return newState;
