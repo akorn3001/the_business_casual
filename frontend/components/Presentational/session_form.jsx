@@ -103,7 +103,7 @@ class SessionForm extends React.Component {
               autoComplete="off"
               />
             <div className="session-form-username-errors">
-              {this.renderUsernameErrors}
+              {this.renderUsernameErrors()}
             </div>
           </div>
 
@@ -116,7 +116,7 @@ class SessionForm extends React.Component {
               className="session-form-password-input"
               />
             <div className="session-form-password-errors">
-                {this.renderPasswordErrors}
+                {this.renderPasswordErrors()}
               </div>
           </div>
 
