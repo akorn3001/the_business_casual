@@ -32,15 +32,17 @@ class Searchbar extends React.Component {
     return (
       <div className="searchbar-wrapper">
         <div className="searchbar">
-          <img src={window.staticImages.magnifyingGlass} />
           <form onSubmit={this.handleSearch}>
-            <input
-              className="search-input"
-              type="text"
-              placeholder="Search..."
-              value={this.state.query}
-              onChange={this.handleChange("query")}
-              />
+            <label>
+              <img src={window.staticImages.magnifyingGlass} />
+              <input
+                className="search-input"
+                type="text"
+                placeholder="Search..."
+                value={this.state.query}
+                onChange={this.handleChange("query")}
+                />
+            </label>
           </form>
         </div>
       </div>
