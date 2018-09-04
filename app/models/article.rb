@@ -11,6 +11,9 @@
 
 class Article < ApplicationRecord
   has_one_attached :image
+  
+  include PgSearch
+  pg_search_scope :search, :against [:title, :body]
 
   validates :title, :body, presence: true
   # validates :title, uniqueness: true
