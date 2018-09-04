@@ -11,9 +11,9 @@
 
 class Article < ApplicationRecord
   has_one_attached :image
-  
+
   include PgSearch
-  pg_search_scope :search, :against [:title, :body]
+  pg_search_scope :search, against: [:title, :body]
 
   validates :title, :body, presence: true
   # validates :title, uniqueness: true
@@ -26,4 +26,12 @@ class Article < ApplicationRecord
   has_many :categories,
     through: :article_tags,
     source: :category
+
+  def self.perform_search(query)
+    if query.present?
+      then Article.search(query)
+    else
+      Article.all
+    end.sorted
+  end
 end

@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'static_pages#root'
 
-  resources :search, only: [:index]
-
   namespace :api, defaults: { format: :json } do
     # Top level articles
     resources :articles, except: [:show]
@@ -30,5 +28,8 @@ Rails.application.routes.draw do
 
     # Top level article_tags
     resources :article_tags, only: [:index, :show]
+
+    # Search
+    resources :search, only: [:index]
   end
 end

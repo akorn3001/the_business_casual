@@ -24,8 +24,9 @@ class Searchbar extends React.Component {
     // const user = Object.assign({}, this.state);
     //
     // this.props.processForm(user);
-    alert(`You typed: ${this.state.query}`);
-    this.setState({ query: "" });
+    // alert(`You typed: ${this.state.query}`);
+    // this.setState({ query: "" });
+    this.props.requestSearchedResults(this.state.query);
   }
 
   render() {
@@ -36,6 +37,8 @@ class Searchbar extends React.Component {
             <label>
               <img src={window.staticImages.magnifyingGlass} />
               <input
+                id="query"
+                name="query"
                 className="search-input"
                 type="text"
                 placeholder="Search..."
