@@ -1,0 +1,36 @@
+import merge from 'lodash/merge';
+
+import {
+  CLEAR_ARTICLE_STATE,
+  RECEIVE_ALL_ARTICLES,
+  RECEIVE_SINGLE_ARTICLE
+} from '../actions/article_actions';
+
+const searchReducer = (state = {}, action) => {
+  let newState;
+  let articles;
+
+  Object.freeze(state);
+  switch(action.type) {
+    case CLEAR_ARTICLE_STATE:
+      newState = {};
+      return newState;
+    case RECEIVE_ALL_ARTICLES:
+      newState = Object.assign({}, state, action.articles);
+      return newState;
+    case RECEIVE_SINGLE_ARTICLE:
+      article = action.article;
+      // return merge({}, state, { [article.id]: article });
+      newState = Object.assign({}, state, {[article.id]: article});
+      return newState;
+    case DELETE_SINGLE_ARTICLE:
+      article = action.article;
+      newState = Object.assign({}, state);
+      delete newState[action.articleID];
+      return newState;
+    default:
+      return state;
+  }
+};
+
+export default searchReducer;

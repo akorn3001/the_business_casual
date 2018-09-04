@@ -32,6 +32,8 @@ gem 'aws-sdk-s3'
 gem 'devise'
 gem 'jquery-rails'
 gem 'toastr-rails'
+gem 'pg-search'
+gem 'will_paginate'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
