@@ -15,6 +15,7 @@ import Searchbar from './Presentational/searchbar';
 import UnpublishedArticlesIndexContainer from './Container/unpublished_articles_index_container';
 import ArticleEditContainer from './Container/article_edit_container';
 import TestContainer from './Container/test_container';
+import SearchIndexContainer from './Container/search_index_container';
 
 
 
@@ -28,6 +29,7 @@ const App = () => {
         <Route path={`/categories/:categoryID/articles`} exact component={CategorizedArticleIndexContainer} />
         <Route path="/articles" exact component={HomePageContainer} />
         <Route path="/articles/:articleID/" exact component={ArticleShowContainer} />
+        <Route path="/search-index" exact component={SearchIndexContainer} />
       </Switch>
 
       <AuthRoute path="/login" exact component={SessionFormContainer} />

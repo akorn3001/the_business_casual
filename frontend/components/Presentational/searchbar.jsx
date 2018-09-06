@@ -19,6 +19,8 @@ class Searchbar extends React.Component {
     };
   }
 
+
+
   handleSearch(e) {
     e.preventDefault();
     // const user = Object.assign({}, this.state);

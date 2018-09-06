@@ -33,3 +33,8 @@
   text-align: center;
   font-family: Merriweather;
 }
+
+.article-form-image-preview {
+  width: 100px;
+  height: auto;
+}

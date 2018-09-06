@@ -14,6 +14,7 @@ class ArticleEdit extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handlePublish = this.handlePublish.bind(this);
+    this.handleSaveForLater = this.handleSaveForLater.bind(this);
     this.handleQuill = this.handleQuill.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
@@ -59,6 +60,23 @@ class ArticleEdit extends React.Component {
 
     this.props.requestUpdateArticle(formDataObject, this.props.article.id)
       .then(this.props.history.push('/articles'));
+  }
+
+  handleSaveForLater(e) {
+    e.preventDefault();
+    const formDataObject = new FormData();
+    formDataObject.append('article[title]', this.state.title);
+    formDataObject.append('article[body]', this.state.body);
+    formDataObject.append('article[published]', false);
+
+    if (this.state.imageFile) {
+      formDataObject.append('article[image]', this.state.imageFile);
+    }
+
+    this.props.requestUpdateArticle(formDataObject, this.props.article.id)
+    .then(() => {
+      this.setState({ title: "", body: "", imageFile: null });
+    });
   }
 
 
@@ -108,6 +126,7 @@ class ArticleEdit extends React.Component {
           <input name="file-input" id="file-input" type="file" accept="image/*" onChange={this.handleFile}/>
           <label className="file-input-label form-submit" htmlFor="file-input">Upload an Image!</label>
           <button className="article-form-button form-submit" onClick={this.handleCancel}>Cancel Changes</button>
+          <button className="article-form-button form-submit" onClick={this.handleSaveForLater}>Save for Later</button>
           <button className="article-form-button form-submit" onClick={this.handlePublish}>Save Changes!</button>
         </div>
         {fileName}

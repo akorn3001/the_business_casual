@@ -9,7 +9,8 @@ class ArticleForm extends React.Component {
     this.state = {
       title: "",
       body: "",
-      imageFile: null
+      imageFile: null,
+      imageURL: null
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -64,10 +65,21 @@ class ArticleForm extends React.Component {
   }
 
   handleFile(e) {
-    this.setState({ imageFile: e.currentTarget.files[0] });
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({ imageFile: file, imageURL: fileReader.result });
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
   }
 
   render() {
+    const preview =
+    this.state.imageURL ? <img className="article-form-image-preview" src={this.state.imageURL} /> : null;
+
     let fileName;
     fileName =
     (this.state.imageFile ?
@@ -105,6 +117,7 @@ class ArticleForm extends React.Component {
             <button className="article-form-button form-submit" onClick={this.handlePublish}>Publish Article!</button>
           </div>
           {fileName}
+          {preview}
 
         </form>
       </div>

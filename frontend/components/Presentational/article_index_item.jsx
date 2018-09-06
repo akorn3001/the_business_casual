@@ -19,7 +19,18 @@ class ArticleIndexItem extends React.Component {
 
   handlePublish(e) {
     e.preventDefault();
-    this.props.article.published = true;
+    const { article } = this.props;
+    const formDataObject = new FormData();
+    formDataObject.append('article[title]', article.title);
+    formDataObject.append('article[body]', article.body);
+    formDataObject.append('article[published]', true);
+
+    if (article.imageFile) {
+      formDataObject.append('article[image]', article.imageFile);
+    }
+
+    this.props.requestUpdateArticle(formDataObject, article.id)
+      .then(this.props.history.push('/articles'));
   }
 
   handleEdit(e) {
