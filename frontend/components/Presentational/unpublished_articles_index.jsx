@@ -15,6 +15,7 @@ class UnpublishedArticlesIndex extends React.Component {
       <div>
         <div className="unpublished-articles-index">
           <h1>Unpublished Articles</h1>
+          <button className="form-submit publish-all">Publish All</button>
           <ArticleIndexContainer published={false} />
         </div>
       </div>

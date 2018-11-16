@@ -74,9 +74,7 @@ class ArticleEdit extends React.Component {
     }
 
     this.props.requestUpdateArticle(formDataObject, this.props.article.id)
-    .then(() => {
-      this.setState({ title: "", body: "", imageFile: null });
-    });
+    .then(this.props.history.push('/unpublished'));
   }
 
 
