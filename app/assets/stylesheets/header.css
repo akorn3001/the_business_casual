@@ -4,7 +4,7 @@ header {
   justify-content: space-around;
   align-items: center;
   margin-top: 0;
-  background-color: #FF5008;
+  background-color: white;
   height: 115px;
   box-sizing: border-box;
   position: relative;
@@ -26,14 +26,20 @@ header a span {
   color: #FFFF2D;
 }
 
-.header-items {
+/* .header-items {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 70px;
   width: 75%;
   margin: auto;
+} */
+
+.header-items {
+  top: 10px;
+  left: 5px;
+  position: absolute;
 }
 
 .header-link, .header-list {
@@ -51,15 +57,24 @@ header a span {
   padding: 8px;
   font-size: 20px;
   font-family: Oswald;
-  background-color: #FF5008;
+  background-color: white;
   border: 2px solid white;
   border-radius: 6px;
-  color: white;
+  color: #FF5008;
 }
 
 .auth-link:hover {
-  background-color: white;
-  color: #FF5008;
+  background-color: #FF5008;
+  color: white;
   transition: 0.25s;
   cursor: pointer;
+}
+
+.synergize-logo-wrapper {
+  display: block;
+  height: 100%;
+}
+
+.synergize-logo {
+  max-height: 100%;
 }

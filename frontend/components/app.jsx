@@ -17,28 +17,36 @@ import ArticleEditContainer from './Container/article_edit_container';
 import TestContainer from './Container/test_container';
 import SearchIndexContainer from './Container/search_index_container';
 
+class App extends React.Component {
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return (
+      <div>
+        <HeaderContainer />
+        <ModalRoot />
+
+        <Switch>
+          <Route path={`/categories/:categoryID/articles`} exact component={CategorizedArticleIndexContainer} />
+          <Route path="/articles" exact component={HomePageContainer} />
+          <Route path="/articles/:articleID/" exact component={ArticleShowContainer} />
+          <Route path="/search-index" exact component={SearchIndexContainer} />
+          <Route path="/" exact component={HomePageContainer} />
+        </Switch>
 
 
-const App = () => {
-  return (
-    <div>
-      <HeaderContainer />
-      <ModalRoot />
 
-      <Switch>
-        <Route path={`/categories/:categoryID/articles`} exact component={CategorizedArticleIndexContainer} />
-        <Route path="/articles" exact component={HomePageContainer} />
-        <Route path="/articles/:articleID/" exact component={ArticleShowContainer} />
-        <Route path="/search-index" exact component={SearchIndexContainer} />
-      </Switch>
-
-      <AuthRoute path="/login" exact component={SessionFormContainer} />
-      <AuthRoute path="/signup" exact component={SessionFormContainer} />
-      <AdminRoute path="/profile" component={AdminDashboardContainer} />
-      <AdminRoute path="/unpublished" component={UnpublishedArticlesIndexContainer} />
-      <AdminRoute path={`/edit-article/:articleID`} exact component={ArticleEditContainer} />
-    </div>
-  );
-};
+        <AuthRoute path="/login" exact component={SessionFormContainer} />
+        <AuthRoute path="/signup" exact component={SessionFormContainer} />
+        <AdminRoute path="/profile" component={AdminDashboardContainer} />
+        <AdminRoute path="/unpublished" component={UnpublishedArticlesIndexContainer} />
+        <AdminRoute path={`/edit-article/:articleID`} exact component={ArticleEditContainer} />
+      </div>
+    );
+  }
+}
 
 export default App;

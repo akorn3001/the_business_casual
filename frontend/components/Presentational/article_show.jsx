@@ -29,6 +29,9 @@ class ArticleShow extends React.Component {
   render() {
     let component;
 
+
+    if (this.props.article)
+
     if (this.props.article) {
       const { article } = this.props;
       component =
@@ -44,6 +47,7 @@ class ArticleShow extends React.Component {
     return (
       <div>
         { component }
+        <span>Hello { this.props.articleIDs }</span>
       </div>
     );
   }
