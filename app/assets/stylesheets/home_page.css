@@ -1,4 +1,18 @@
-.home-page-published-articles {
-  width: 66%;
-  margin: auto;
+
+@media screen and (max-width: 799px) {
+  .home-page-published-articles {
+    width: 100%;
+    margin: auto;
+  }
+
+  .article-index-item {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .home-page-published-articles {
+    width: 80%;
+    margin: auto;
+  }
 }

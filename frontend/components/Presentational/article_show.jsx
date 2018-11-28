@@ -47,7 +47,6 @@ class ArticleShow extends React.Component {
     return (
       <div>
         { component }
-        <span>Hello { this.props.articleIDs }</span>
       </div>
     );
   }

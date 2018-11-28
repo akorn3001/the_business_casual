@@ -5,7 +5,7 @@ header {
   align-items: center;
   margin-top: 0;
   background-color: white;
-  height: 115px;
+  height: 100px;
   box-sizing: border-box;
   position: relative;
   top: 0;
@@ -37,8 +37,8 @@ header a span {
 } */
 
 .header-items {
-  top: 10px;
-  left: 5px;
+  top: 7px;
+  left: 3px;
   position: absolute;
 }
 
@@ -48,7 +48,7 @@ header a span {
 
 .header-link a, .header-category a {
   text-decoration: none;
-  color: white;
+  color: red;
   font-size: 20px;
   font-family: Oswald;
 }
@@ -71,10 +71,15 @@ header a span {
 }
 
 .synergize-logo-wrapper {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 100%;
 }
 
 .synergize-logo {
-  max-height: 100%;
+  display: inline-block;
+  max-height: 65px;
+  width: auto;
+  margin: auto;
 }
