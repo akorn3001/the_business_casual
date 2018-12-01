@@ -16,7 +16,7 @@
 }
 
 .article-index-item h2 {
-  font-family: PT Serif;
+  font-family: Avalon-Bold;
 }
 
 .article-index-item img {
@@ -47,4 +47,8 @@
 .categorized-article-index {
   width: 66%;
   margin: auto;
+}
+
+.article-index-item p {
+  font-family: Avalon;
 }

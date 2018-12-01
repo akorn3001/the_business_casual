@@ -18,7 +18,6 @@ class Header extends React.Component {
 
   render() {
     const { currentUser } = this.props;
-
     let navigation;
 
     // TOP LEVEL NAVIGATION LINKS
@@ -32,17 +31,23 @@ class Header extends React.Component {
         navigation =
           <ul className="header-items">
             <li className="header-link">{dashboardLink}</li>
+            <li className="header-link">Category-1</li>
+            <li className="header-link">Category-2</li>
             <li className="header-link">{signOutButton}</li>
           </ul>;
         } else {
           navigation =
           <ul className="header-items">
+            <li className="header-link">Category-1</li>
+            <li className="header-link">Category-2</li>
             <li className="header-link">{signOutButton}</li>
           </ul>;
         }
       } else {
         navigation =
         <ul className="header-items">
+          <li className="header-link">Category-1</li>
+          <li className="header-link">Category-2</li>
           <li className="header-link">{signInLink}</li>
         </ul>;
       }
@@ -50,10 +55,10 @@ class Header extends React.Component {
 
       return (
         <header>
+          {navigation}
           <div className="synergize-logo-wrapper">
             <Link to="/articles"><img className="synergize-logo" src={window.staticImages.synergizeLogo} /></Link>
           </div>
-          {navigation}
         </header>
       );
     }
