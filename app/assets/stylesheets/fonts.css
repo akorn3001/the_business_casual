@@ -1,3 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 @import url('https://fonts.googleapis.com/css?family=PT+Serif:700');
+
+@font-face {
+  font-family: 'Avalon';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Avalon'),
+    url(../Fonts/Avalon.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Avalon-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Avalon-Bold'),
+    url(../Fonts/Avalon Bold.ttf) format('ttf');
+}

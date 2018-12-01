@@ -11,7 +11,8 @@
   justify-content: space-between;
   text-align: center;
   background-color: white;
-  -webkit-box-shadow: 0px 0px 2px 2px #ccc;
+  /* -webkit-box-shadow: 0px 0px 2px 2px #ccc; */
+  border: 5px solid #FFF200;
 }
 
 .article-index-item h2 {
