@@ -27,23 +27,25 @@ class App extends React.Component {
     return (
       <div>
         <HeaderContainer />
-        <ModalRoot />
 
-        <Switch>
-          <Route path={`/categories/:categoryID/articles`} exact component={CategorizedArticleIndexContainer} />
-          <Route path="/articles" exact component={HomePageContainer} />
-          <Route path="/articles/:articleID/" exact component={ArticleShowContainer} />
-          <Route path="/search-index" exact component={SearchIndexContainer} />
-          <Route path="/" exact component={HomePageContainer} />
-        </Switch>
+        <div id="all-but-header">
+          <ModalRoot />
 
+          <Switch>
+            <Route path={`/categories/:categoryID/articles`} exact component={CategorizedArticleIndexContainer} />
+            <Route path="/articles" exact component={HomePageContainer} />
+            <Route path="/articles/:articleID/" exact component={ArticleShowContainer} />
+            <Route path="/search-index" exact component={SearchIndexContainer} />
+            <Route path="/" exact component={HomePageContainer} />
+          </Switch>
 
+          <AuthRoute path="/login" exact component={SessionFormContainer} />
+          <AuthRoute path="/signup" exact component={SessionFormContainer} />
+          <AdminRoute path="/profile" component={AdminDashboardContainer} />
+          <AdminRoute path="/unpublished" component={UnpublishedArticlesIndexContainer} />
+          <AdminRoute path={`/edit-article/:articleID`} exact component={ArticleEditContainer} />
+        </div>
 
-        <AuthRoute path="/login" exact component={SessionFormContainer} />
-        <AuthRoute path="/signup" exact component={SessionFormContainer} />
-        <AdminRoute path="/profile" component={AdminDashboardContainer} />
-        <AdminRoute path="/unpublished" component={UnpublishedArticlesIndexContainer} />
-        <AdminRoute path={`/edit-article/:articleID`} exact component={ArticleEditContainer} />
       </div>
     );
   }

@@ -13,9 +13,7 @@ class AdminDashboard extends React.Component {
 render() {
   return (
     // <div className="admin-dash">
-    //   <div className="admin-dash-category-index">
-    //     <CategoryIndexContainer />
-    //   </div>
+
     //
     //   <div className="admin-dash-published-articles">
     //     <ArticleIndexContainer imageDisplay={false} published={true} />
@@ -35,6 +33,10 @@ render() {
     //   </div>
     // </div>
     <div className="admin-dash-wrapper">
+      <div className="admin-dash-category-index">
+        <CategoryIndexContainer />
+      </div>
+      
       <div className="admin-dash">
         <div id="admin-dash-left" className="admin-dash-column">
           <div className="admin-dash-bottom">

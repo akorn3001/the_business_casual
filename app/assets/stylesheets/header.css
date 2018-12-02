@@ -7,68 +7,26 @@ header {
   background-color: white;
   height: 100px;
   box-sizing: border-box;
-  position: relative;
   top: 0;
   width: 100%;
   z-index: 3;
   /* box-shadow: 0 5px 6px 0 rgba(50,50,50,0.26); */
+  position: fixed;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 5px;
 }
 
 header a {
   text-decoration: none;
+  font-family: Avalon;
 }
-
-header a span {
-  font-size: 36px;
-  font-weight: bold;
-  font-family: Comfortaa;
-  letter-spacing: 8px;
-  color: #FFFF2D;
-}
-
-.header-items {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  width: 75%;
-  margin: auto;
-}
-
-.header-link, .header-list {
-  list-style-type: none;
-}
-
-.header-link a, .header-category a {
-  text-decoration: none;
-  color: #FFF200;
-  font-size: 20px;
-  font-family: Oswald;
-}
-
-/* .auth-link {
-  padding: 8px;
-  font-size: 20px;
-  font-family: Oswald;
-  background-color: white;
-  border: 2px solid white;
-  border-radius: 6px;
-  color: #FF5008;
-} */
-
-/* .auth-link:hover {
-  background-color: #FF5008;
-  color: white;
-  transition: 0.25s;
-  cursor: pointer;
-} */
 
 .synergize-logo-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
+  /* margin-bottom: 20px; */
 }
 
 .synergize-logo {
@@ -76,4 +34,31 @@ header a span {
   max-height: 65px;
   width: auto;
   margin: auto;
+
+}
+
+.top-level-nav {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.category-links-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.category-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+.category-link a {
+  color: #FFF200;
 }

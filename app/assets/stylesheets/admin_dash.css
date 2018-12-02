@@ -83,3 +83,11 @@
   background-color: #2dbf30;
   border-radius: 50%;
 }
+
+.admin-dash-category-index {
+  float: left;
+}
+
+.category-index h1 {
+  font-family: Avalon;
+}
