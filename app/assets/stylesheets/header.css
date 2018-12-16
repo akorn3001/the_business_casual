@@ -5,28 +5,24 @@ header {
   align-items: center;
   margin-top: 0;
   background-color: white;
-  height: 100px;
   box-sizing: border-box;
   top: 0;
   width: 100%;
   z-index: 3;
-  /* box-shadow: 0 5px 6px 0 rgba(50,50,50,0.26); */
   position: fixed;
-  border-bottom: 1px solid lightgray;
   padding-bottom: 5px;
 }
 
 header a {
   text-decoration: none;
-  font-family: Avalon;
+  font-family: "Avalon";
 }
 
-.synergize-logo-wrapper {
+/* .synergize-logo-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  /* margin-bottom: 20px; */
 }
 
 .synergize-logo {
@@ -34,31 +30,47 @@ header a {
   max-height: 65px;
   width: auto;
   margin: auto;
+} */
 
+@media screen and (min-width: 824px) {
+  header {
+    height: 120px;
+  }
+
+  .top-level-nav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .synergize-logo {
+    max-height: 65px;
+    width: auto;
+    margin: auto;
+  }
+
+  .synergize-logo-wrapper {
+
+  }
 }
 
-.top-level-nav {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
+@media screen and (max-width: 823px) {
+  header {
+    height: 50px;
+  }
 
-.category-links-list {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+  .top-level-nav {
+    display: none;
+  }
 
-.category-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000000;
-  border-radius: 5px;
-  padding: 6px;
-}
+  .synergize-logo {
+    max-width:270px;
+  }
 
-.category-link a {
-  color: #FFF200;
+  .synergize-logo-wrapper {
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }

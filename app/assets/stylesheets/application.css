@@ -37,16 +37,25 @@ html {
 body {
   height: 100%;
   background-color: white;
+  font-family: Avalon;
 }
 
 .modal-open {
   overflow: hidden;
 }
 
-#all-but-header {
-  padding-top: 100px;
-}
-
 #article-form h2 {
   font-family: Avalon;
+}
+
+@media screen and (min-width: 824px) {
+  #all-but-header {
+    padding-top: 130px;
+  }
+}
+
+@media screen and (max-width: 823px) {
+  #all-but-header {
+    padding-top: 60px;
+  }
 }

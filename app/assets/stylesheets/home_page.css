@@ -1,5 +1,5 @@
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 823px) {
   .home-page-published-articles {
     width: 100%;
     margin: auto;
@@ -10,7 +10,7 @@
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 824px) {
   .home-page-published-articles {
     width: 80%;
     margin: auto;

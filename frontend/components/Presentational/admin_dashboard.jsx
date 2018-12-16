@@ -33,10 +33,6 @@ render() {
     //   </div>
     // </div>
     <div className="admin-dash-wrapper">
-      <div className="admin-dash-category-index">
-        <CategoryIndexContainer />
-      </div>
-      
       <div className="admin-dash">
         <div id="admin-dash-left" className="admin-dash-column">
           <div className="admin-dash-bottom">

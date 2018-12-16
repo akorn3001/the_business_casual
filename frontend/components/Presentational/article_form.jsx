@@ -100,7 +100,7 @@ class ArticleForm extends React.Component {
               type="text"
               placeholder="Add Title"
             />
-          </div>
+        </div>
 
           <ReactQuill
             className="quill-element"
