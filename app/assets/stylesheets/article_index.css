@@ -41,6 +41,10 @@
   color: #4286f4;
 }
 
+.article-index-item a {
+  color: black;
+}
+
 .article-index-item a:hover {
   color: #3D3D3D;
   cursor: pointer;

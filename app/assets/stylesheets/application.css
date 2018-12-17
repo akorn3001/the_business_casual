@@ -37,7 +37,7 @@ html {
 body {
   height: 100%;
   background-color: white;
-  font-family: Avalon;
+  font-family: "Avalon";
 }
 
 .modal-open {
@@ -45,7 +45,7 @@ body {
 }
 
 #article-form h2 {
-  font-family: Avalon;
+  font-family: "Avalon";
 }
 
 @media screen and (min-width: 824px) {

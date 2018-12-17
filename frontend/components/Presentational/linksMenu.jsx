@@ -5,7 +5,10 @@ class LinksMenu extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { linkColor : "#444444" };
+    this.state = {
+      linkColor : "black",
+      backgroundColor : "#FFF200"
+    };
   }
 
   render() {
@@ -13,42 +16,42 @@ class LinksMenu extends Component {
     const impactLink =
     <NavLink className="menuitems"
       activeClassName="active-link"
-      activeStyle={{ color: this.state.linkColor }}
+      activeStyle={{ background: this.state.backgroundColor, color: this.state.linkColor }}
       to="/categories/82/articles">Impact
     </NavLink>;
 
     const innovationLink =
     <NavLink className="menuitems"
       activeClassName="active-link"
-      activeStyle={{ color: this.state.linkColor }}
+      activeStyle={{ background: this.state.backgroundColor, color: this.state.linkColor }}
       to="/categories/83/articles">Innovation
     </NavLink>;
 
     const marketing101Link =
     <NavLink className="menuitems"
       activeClassName="active-link"
-      activeStyle={{ color: this.state.linkColor }}
+      activeStyle={{ background: this.state.backgroundColor, color: this.state.linkColor }}
       to="/categories/84/articles">Marketing 101
     </NavLink>;
 
     const workLifeBalanceLink =
     <NavLink className="menuitems"
       activeClassName="active-link"
-      activeStyle={{ color: this.state.linkColor }}
+      activeStyle={{ background: this.state.backgroundColor, color: this.state.linkColor }}
       to="/categories/85/articles">Work Life Balance
     </NavLink>;
 
     const jobBoardLink =
     <NavLink className="menuitems"
       activeClassName="active-link"
-      activeStyle={{ color: this.state.linkColor }}
+      activeStyle={{ background: this.state.backgroundColor, color: this.state.linkColor }}
       to="/categories/86/articles">Job Board
     </NavLink>;
 
     const networkingSpaceLink =
     <NavLink className="menuitems"
       activeClassName="active-link"
-      activeStyle={{ color: this.state.linkColor }}
+      activeStyle={{ background: this.state.backgroundColor, color: this.state.linkColor }}
       to="/categories/87/articles">Networking Space
     </NavLink>;
 
